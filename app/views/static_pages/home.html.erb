@@ -1,0 +1,10 @@
+<% provide :title, t(".home") %>
+<div class="center jumbotron">
+  <h1><%= t ".welcome" %></h1>
+  <h2>
+  <%= t ".intro_home1" %>
+  <%= link_to t(".football_bet"), "http://www.railstutorial.org/" %>
+  <%= t ".intro_home2" %>
+  </h2>
+  <%= link_to t(".sign_up"), "#", class: "btn btn-lg btn-primary" %>
+</div>

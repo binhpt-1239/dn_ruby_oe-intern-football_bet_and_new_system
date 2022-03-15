@@ -1,0 +1,31 @@
+vi:
+  title: "Cá cược bóng đá"
+  layouts:
+    footer:
+      football_bet: "Cá cược bóng đá"
+      about: "Giới thiệu"
+      contact: "Liên Hệ"
+      new: "Tin tức"
+    header:
+      football_bet: "Cá cược bóng đá"
+      viet: "Tiếng Việt"
+      eng:  "Tiếng Anh"
+      home: "Trang chủ"
+      help: "Hỗ trợ"
+      log_in: "Đăng nhập"
+  static_pages:
+    home:
+      football_bet: "Cá cược bóng đá"
+      welcome: "Chào mừng bạn đến với ứng dụng Cá cược bóng đá"
+      home: "Trang chủ"
+      sign_up: "Đăng kí ngay!"
+      intro_home1: "Đây là trang chủ của"
+      intro_home2: "ứng dụng Cá cược bóng đá."
+    help:
+      help: "Hỗ trợ"
+      intro_help1: "Nhận trợ giúp về Hướng dẫn Cá cược bóng đá tại "
+      intro_help2: "Để nhận trợ giúp về ứng dụng Cá cược bóng đá này, hãy xem"
+      football_bet_help: "Hỗ trợ Cá cược bóng đá"
+      football_bet_book: "Sách Cá cược bóng đá"
+    about:
+      about: "Giới thiệu"

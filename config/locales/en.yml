@@ -1,0 +1,31 @@
+en:
+  title: "Football Bet"
+  layouts:
+    footer:
+      football_bet: "Football Bet"
+      about: "About"
+      contact: "Contact"
+      new: "New"
+    header:
+      football_bet: "Football Bet"
+      viet: "Vietnamese"
+      eng:  "English"
+      home: "Home"
+      help: "Help"
+      log_in: "Log In"
+  static_pages:
+    home:
+      football_bet: "Football Bet"
+      welcome: "Welcome to the Football Bet App"
+      home: "Home"
+      sign_up: "Sign up now!"
+      intro_home1: "This is the home page for the"
+      intro_home2: "football bet application."
+    help:
+      help: "Help"
+      intro_help1: "Get help on the Football Bet at the "
+      intro_help2: "To get help on this sample app, see the "
+      football_bet_help: "Ruby on Rails Tutorial help"
+      football_bet_book: "Ruby on Rails Tutorial book"
+    about:
+      about: "About"
