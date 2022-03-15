@@ -1,0 +1,21 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: 5
+  username:
+  password:
+  host: localhost
+
+development:
+  <<: *default
+  database: db_demo
+
+test:
+  <<: *default
+  database: db_lms
+
+production:
+  <<: *default
+  database: db_lms_production
+  username: <db username>
+  password: <db password>
