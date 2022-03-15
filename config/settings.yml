@@ -1,0 +1,7 @@
+user:
+  email:
+    max_length: 255
+    VALID_EMAIL_REGEX: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/'
+digits:
+  digit_6: 6
+  digit_21: 21
