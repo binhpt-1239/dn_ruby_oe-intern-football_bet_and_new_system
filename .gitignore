@@ -59,3 +59,9 @@ config/environments/*.local.yml
 
 # Ignore application configuration
 /config/application.yml
+
+#spec
+/spec/*.rb
+/spec/helpers/*.rb
+/spec/requests/*.rb
+/spec/views/*

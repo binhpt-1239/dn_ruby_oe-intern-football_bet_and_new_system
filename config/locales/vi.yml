@@ -1,5 +1,10 @@
 vi:
   title: "Cá cược bóng đá"
+  notification:
+    log_in:
+      err: "Đăng nhập thất bại"
+      success: "Chào mừng bạn đến với ứng dụng mẫu"
+      out_success: "Hẹn gặp lại!"
   layouts:
     footer:
       football_bet: "Cá cược bóng đá"
@@ -13,6 +18,9 @@ vi:
       home: "Trang chủ"
       help: "Hỗ trợ"
       log_in: "Đăng nhập"
+      profile: "Hồ sơ"
+      settings: "Cài đặt"
+      log_out: "Đăng xuất"
   static_pages:
     home:
       football_bet: "Cá cược bóng đá"
@@ -29,3 +37,19 @@ vi:
       football_bet_book: "Sách Cá cược bóng đá"
     about:
       about: "Giới thiệu"
+  sessions:
+    new:
+      remember_me: "Hãy nhớ tôi trên máy tính này!"
+      log_in: "Đăng nhập"
+      new_user: "Người dùng mới?"
+      intr_signup: "Đăng ký ngay!"
+
+  activerecord:
+    models:
+      user: "User"
+    attributes:
+      user:
+        name: "Tên"
+        email: "E-mail"
+        password: "Mật khẩu"
+        confirmation: "Xác nhận Mật khẩu"
