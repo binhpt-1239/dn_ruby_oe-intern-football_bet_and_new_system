@@ -31,7 +31,7 @@ jobs:
   - bundle _2.1.4_ install --path vendor/bundle # _2.1.4_ if ruby 2.7.1 or 3.0.2
   script:
   - RAILS_ENV=test bundle exec rails db:drop db:create db:migrate
-  - bundle _2.1.4_ exec rspec # _2.1.4_ if ruby 2.7.1 or 3.0.2
+  # - bundle _2.1.4_ exec rspec # _2.1.4_ if ruby 2.7.1 or 3.0.2
 
 - name: test:rubocop
   stage: test

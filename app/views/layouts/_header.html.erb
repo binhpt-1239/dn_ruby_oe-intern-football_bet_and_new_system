@@ -11,9 +11,25 @@
           <li class="nav-item">
             <%= link_to t(".help"), static_pages_help_path, class: "text-primary nav-link" %>
           </li>
-          <li class="nav-item nav-link">
-            <%= link_to t(".log_in"), "#", class: "text-primary" %>
-          </li>
+          <% if logged_in? %>
+            <li class="dropdown">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                <%= t @current_user.name %>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li class="dropdown-item"><%= link_to t(".profile"), "#" %></li>
+                <li class="dropdown-item"><%= link_to t(".setting"), "#" %></li>
+                <li class="divider"></li>
+                <li class="dropdown-item">
+                  <%= link_to t(".log_out"), logout_path, method: "delete" %>
+                </li>
+              </ul>
+            </li>
+          <% else %>
+            <li class="nav-item nav-link">
+              <%= link_to t(".log_in"), login_path, class: "text-primary" %>
+            </li>
+          <% end %>
         </ul>
         <ul class="navbar-nav ml-auto">
            <li class="nav-item nav-link">

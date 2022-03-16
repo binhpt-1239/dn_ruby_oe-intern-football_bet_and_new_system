@@ -1,5 +1,10 @@
 en:
   title: "Football Bet"
+  notification:
+    log_in:
+      err: "Sign In fails"
+      success: "Welcome to the Sample App"
+      out_success: "See you later!"
   layouts:
     footer:
       football_bet: "Football Bet"
@@ -13,6 +18,9 @@ en:
       home: "Home"
       help: "Help"
       log_in: "Log In"
+      profile: "Profile"
+      setting: "Settings"
+      log_out: "Log out"
   static_pages:
     home:
       football_bet: "Football Bet"
@@ -29,3 +37,19 @@ en:
       football_bet_book: "Ruby on Rails Tutorial book"
     about:
       about: "About"
+  sessions:
+    new:
+      remember_me: "Remember me on this computer"
+      log_in: "Log In"
+      new_user: "New user?"
+      intr_signup: "Sign up now!"
+
+  activerecord:
+    models:
+      user: "User"
+    attributes:
+      user:
+        name: "Name"
+        email: "Email"
+        password: "Password"
+        confirmation: "Password Confirmation"
