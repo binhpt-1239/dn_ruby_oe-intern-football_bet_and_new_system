@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_16_095956) do
+ActiveRecord::Schema.define(version: 2022_03_18_044002) do
 
   create_table "bets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "match_id", null: false
@@ -22,10 +22,9 @@ ActiveRecord::Schema.define(version: 2022_03_16_095956) do
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.string "comment"
-    t.integer "parent_id"
-    t.bigint "news_id", null: false
+    t.bigint "user_id"
+    t.bigint "news_id"
+    t.string "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["news_id"], name: "index_comments_on_news_id"
@@ -56,19 +55,13 @@ ActiveRecord::Schema.define(version: 2022_03_16_095956) do
     t.index ["player_id"], name: "index_goal_results_on_player_id"
   end
 
-  create_table "matches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "season_tournament_id", null: false
-    t.datetime "date_time"
-    t.integer "home_id"
-    t.integer "guest_id"
-    t.index ["season_tournament_id"], name: "index_matches_on_season_tournament_id"
-  end
-
   create_table "news", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
     t.string "content"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_news_on_user_id"
   end
 
   create_table "player_infos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -97,6 +90,14 @@ ActiveRecord::Schema.define(version: 2022_03_16_095956) do
     t.string "name"
     t.integer "begin_year"
     t.integer "end_year"
+  end
+
+  create_table "soccer_matches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "season_tournament_id", null: false
+    t.datetime "date_time"
+    t.integer "home_id"
+    t.integer "guest_id"
+    t.index ["season_tournament_id"], name: "index_soccer_matches_on_season_tournament_id"
   end
 
   create_table "team_season_tournaments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -139,19 +140,20 @@ ActiveRecord::Schema.define(version: 2022_03_16_095956) do
     t.string "remember_digest"
   end
 
-  add_foreign_key "bets", "matches"
+  add_foreign_key "bets", "soccer_matches", column: "match_id"
   add_foreign_key "comments", "news"
   add_foreign_key "comments", "users"
   add_foreign_key "currencies", "currency_types"
   add_foreign_key "currencies", "users"
-  add_foreign_key "goal_results", "matches"
   add_foreign_key "goal_results", "players"
-  add_foreign_key "matches", "season_tournaments"
+  add_foreign_key "goal_results", "soccer_matches", column: "match_id"
+  add_foreign_key "news", "users"
   add_foreign_key "player_infos", "players"
   add_foreign_key "player_infos", "season_tournaments"
   add_foreign_key "player_infos", "teams"
   add_foreign_key "season_tournaments", "seasons"
   add_foreign_key "season_tournaments", "tournaments"
+  add_foreign_key "soccer_matches", "season_tournaments"
   add_foreign_key "team_season_tournaments", "season_tournaments"
   add_foreign_key "team_season_tournaments", "teams"
   add_foreign_key "user_bets", "bets"
