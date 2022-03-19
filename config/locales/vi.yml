@@ -1,26 +1,78 @@
 vi:
   title: "Cá cược bóng đá"
+  number:
+    currency:
+        format:
+          delimiter: "."
+          format: "%n %u"
+          precision: 0
+          separator: ","
+          significant: false
+          strip_insignificant_zeros: false
+          unit: "đô"
   notification:
     log_in:
       err: "Đăng nhập thất bại"
       success: "Chào mừng bạn đến với ứng dụng mẫu"
       out_success: "Hẹn gặp lại!"
+      request: "Vui lòng đăng nhập"
+    user:
+      not_found: "Không tìm thấy người dùng"
+    currency:
+      create:
+        success: "Tạo thành công"
+        fails: "Tạo thất bại"
+
+  currencies:
+    currency:
+      add_money: "Nạp tiền"
+      take_money: "Rút tiền"
+      win_money: "Thắng cược"
+      lose_money: "Thua cược"
+      intro: "trước"
+    index:
+      account_balance: "Số dư tài khoản: "
+      history_balance: "Lịch sử số dư: "
+      history_currencies: "Lịch sử  Ví tiền"
+      all: "Tất cả"
+      payment: "Nạp tiền"
+      withdrawal: "Rút tiền "
+      winning_bonus: "Thắng cược"
+      loss_money: "Thua cược"
+    new:
+      title: "Nạp/Rút tiền"
+      account_balance: "Số dư tài khoản: "
+      history_balance: "Lịch sử số dư: "
+      history_currencies: "Lịch sử  Ví tiền"
+      all: "Tất cả"
+      payment: "Nạp tiền"
+      withdrawal: "Rút tiền "
+      winning_bonus: "Thắng cược"
+      loss_money: "Thua cược"
+      submit: "Thực hiện"
   layouts:
     footer:
       football_bet: "Cá cược bóng đá"
-      about: "Giới thiệu"
-      contact: "Liên Hệ"
-      new: "Tin tức"
+      intro: "Được cung cấp bởi Sun * 2022. Mọi quyền được bảo lưu. Phiên bản 18/3/2021 4:45 PM"
+      version: "  @ Phiên bản 1.0.0"
     header:
       football_bet: "Cá cược bóng đá"
       viet: "Tiếng Việt"
       eng:  "Tiếng Anh"
       home: "Trang chủ"
       help: "Hỗ trợ"
+      about: "Giới thiệu"
+      contact: "Liên hệ"
+      new: "Tin tức mới"
       log_in: "Đăng nhập"
-      profile: "Hồ sơ"
-      settings: "Cài đặt"
-      log_out: "Đăng xuất"
+    asider:
+      bets: "  Cá cược"
+      charts: "  Bảng Xếp hạng"
+      schedule: "  Lịch thi đấu"
+      wallet: "  Ví tiền   "
+      profile: "  Hồ sơ"
+      setting: "  Cài đặt"
+      log_out: "  Đăng xuất"
   static_pages:
     home:
       football_bet: "Cá cược bóng đá"
@@ -43,13 +95,26 @@ vi:
       log_in: "Đăng nhập"
       new_user: "Người dùng mới?"
       intr_signup: "Đăng ký ngay!"
+  users:
+    show:
+      account_balance: "Số dư tài khoản: "
+      history_balance: "Lịch sử số dư: "
+      all: "Tất cả"
+      payment: "Nạp tiền"
+      withdrawal: "Rút tiền "
+      winning_bonus: "Thắng cược"
+      loss_money: "Thua cược"
 
   activerecord:
     models:
       user: "User"
+      currency: "Currency"
     attributes:
       user:
         name: "Tên"
         email: "E-mail"
         password: "Mật khẩu"
         confirmation: "Xác nhận Mật khẩu"
+        submit: "Thực hiện"
+      currency:
+        amount: "Số tiền"
