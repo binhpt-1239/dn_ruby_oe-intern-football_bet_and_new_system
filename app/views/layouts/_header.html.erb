@@ -1,31 +1,26 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
+<header class="row navbar navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <%= link_to t(".football_bet"), static_pages_home_path , class: "navbar-brand text-danger", id: "logo" %>
+      <%= link_to t(".football_bet"), root_path , class: "navbar-brand text-danger", id: "logo" %>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mt-2 mt-lg-0">
           <li class="nav-item">
-            <%= link_to t(".home"), static_pages_home_path, class: "text-primary nav-link" %>
+            <%= link_to t(".home"), root_path, class: "text-primary nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to t(".help"), static_pages_help_path, class: "text-primary nav-link" %>
+            <%= link_to t(".help"), help_path, class: "text-primary nav-link" %>
           </li>
-          <% if logged_in? %>
-            <li class="dropdown">
-              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
-                <%= t @current_user.name %>
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li class="dropdown-item"><%= link_to t(".profile"), "#" %></li>
-                <li class="dropdown-item"><%= link_to t(".setting"), "#" %></li>
-                <li class="divider"></li>
-                <li class="dropdown-item">
-                  <%= link_to t(".log_out"), logout_path, method: "delete" %>
-                </li>
-              </ul>
-            </li>
-          <% else %>
+          <li class="nav-item">
+            <%= link_to t(".about"), about_path, class: "text-primary nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to t(".new"), "#", class: "text-primary nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to t(".contact"), "#", class: "text-primary nav-link" %>
+          </li>
+          <% unless logged_in? %>
             <li class="nav-item nav-link">
               <%= link_to t(".log_in"), login_path, class: "text-primary" %>
             </li>

@@ -146,6 +146,8 @@ GEM
     nokogiri (1.13.3)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
+    pagy (5.10.1)
+      activesupport
     parallel (1.21.0)
     parser (3.1.1.0)
       ast (~> 2.4.1)
@@ -292,6 +294,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.2)
   mysql2 (~> 0.5.3)
+  pagy
   puma (~> 4.1)
   rails (~> 6.0.4, >= 6.0.4.6)
   rails-i18n

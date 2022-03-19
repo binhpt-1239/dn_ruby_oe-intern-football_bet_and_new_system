@@ -1,16 +1,60 @@
 en:
   title: "Football Bet"
+  number:
+    currency:
+        format:
+          delimiter: "."
+          format: "%n %u"
+          precision: 0
+          separator: ","
+          significant: false
+          strip_insignificant_zeros: false
+          unit: "$"
   notification:
     log_in:
       err: "Sign In fails"
       success: "Welcome to the Sample App"
       out_success: "See you later!"
+      request: "Please Login"
+    user:
+      not_found: "User not found"
+    currency:
+      create:
+        success: "Create Success"
+        fails: "Create Fails"
+
+  currencies:
+    currency:
+      add_money: "Add money "
+      take_money: "Take money"
+      win_money: "Win money"
+      lose_money: "Lose money"
+      intro: "ago"
+    index:
+      account_balance: "Account balance: "
+      history_balance: "History balance: "
+      history_currencies: "History currencies "
+      all: "All "
+      payment: "Payment "
+      withdrawal: "Withdrawal "
+      winning_bonus: "Winning Bonus"
+      loss_money: "Loss money"
+    new:
+      title: "Payment/Withdrawal"
+      account_balance: "Account balance: "
+      history_balance: "History balance: "
+      history_currencies: "History currencies"
+      all: "All "
+      payment: "Payment "
+      withdrawal: "Withdrawal "
+      winning_bonus: "Winning Bonus"
+      loss_money: "Loss money"
+      submit: "Submit "
   layouts:
     footer:
       football_bet: "Football Bet"
-      about: "About"
-      contact: "Contact"
-      new: "New"
+      intro: "Powered by Sun * 2022. All Rights Reserved. rev 3/18/2021 4:45 PM "
+      version: "@ version 1.0.0"
     header:
       football_bet: "Football Bet"
       viet: "Vietnamese"
@@ -18,9 +62,17 @@ en:
       home: "Home"
       help: "Help"
       log_in: "Log In"
-      profile: "Profile"
-      setting: "Settings"
-      log_out: "Log out"
+      about: "About"
+      contact: "Contact"
+      new: "New"
+    asider:
+      bets: "  Bets"
+      charts: "  Charts"
+      schedule: "  Schedule"
+      wallet: "  Wallet   "
+      profile: "  Profile"
+      setting: "  Settings"
+      log_out: "  Log out"
   static_pages:
     home:
       football_bet: "Football Bet"
@@ -43,13 +95,26 @@ en:
       log_in: "Log In"
       new_user: "New user?"
       intr_signup: "Sign up now!"
+  users:
+    show:
+      account_balance: "Account balance: "
+      history_balance: "History balance: "
+      all: "All "
+      payment: "Payment "
+      withdrawal: "Withdrawal "
+      winning_bonus: "Winning Bonus"
+      loss_money: "Loss money"
 
   activerecord:
     models:
       user: "User"
+      currency: "Currency"
     attributes:
       user:
         name: "Name"
         email: "Email"
         password: "Password"
         confirmation: "Password Confirmation"
+        submit: "Submit"
+      currency:
+        amount: "Amount"
