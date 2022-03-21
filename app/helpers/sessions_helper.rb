@@ -36,4 +36,8 @@ module SessionsHelper
     forget @current_user
     @current_user = nil
   end
+
+  def store_location
+    session[:forwarding_url] = request.url if request.get?
+  end
 end

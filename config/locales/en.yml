@@ -34,11 +34,6 @@ en:
       account_balance: "Account balance: "
       history_balance: "History balance: "
       history_currencies: "History currencies "
-      all: "All "
-      payment: "Payment "
-      withdrawal: "Withdrawal "
-      winning_bonus: "Winning Bonus"
-      loss_money: "Loss money"
     new:
       title: "Payment/Withdrawal"
       account_balance: "Account balance: "
@@ -50,6 +45,16 @@ en:
       winning_bonus: "Winning Bonus"
       loss_money: "Loss money"
       submit: "Submit "
+    type_currencies:
+      account_balance: "Account balance: "
+      history_balance: "History balance "
+      history_currencies: "History currencies "
+      all: "All "
+      payment: "Payment "
+      withdrawal: "Withdrawal "
+      winning_bonus: "Winning Bonus"
+      loss_money: "Loss money"
+
   layouts:
     footer:
       football_bet: "Football Bet"

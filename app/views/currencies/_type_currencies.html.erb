@@ -1,0 +1,19 @@
+<%= render "users/user_info" %>
+<h5>
+  <%= t ".account_balance" %>
+  <%= number_to_currency(sum_amount current_user) %>
+</h5>
+<%= link_to t(".payment"), "#"%>|
+<%= link_to t(".withdrawal"), "#"%>
+<div class="dropdown">
+  <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    <%= t ".history_balance" %>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><%= link_to t(".all"), currencies_path, class: "dropdown-item" %></li>
+    <li><%= link_to t(".payment"), currencies_path(type: :payment), class: "dropdown-item" %></li>
+    <li><%= link_to t(".withdrawal"), currencies_path(type: :withdrawal), class: "dropdown-item" %></li>
+    <li><%= link_to t(".winning_bonus"), currencies_path(type: :win), class: "dropdown-item" %></li>
+    <li><%= link_to t(".loss_money"), currencies_path(type: :lose), class: "dropdown-item" %></li>
+  </ul>
+</div>
