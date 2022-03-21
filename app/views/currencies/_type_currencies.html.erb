@@ -3,8 +3,8 @@
   <%= t ".account_balance" %>
   <%= number_to_currency(sum_amount current_user) %>
 </h5>
-<%= link_to t(".payment"), "#"%>|
-<%= link_to t(".withdrawal"), "#"%>
+<%= link_to t(".payment"), new_currency_path(type: :payment)%>|
+<%= link_to t(".withdrawal"), new_currency_path(type: :withdrawal)%>
 <div class="dropdown">
   <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     <%= t ".history_balance" %>

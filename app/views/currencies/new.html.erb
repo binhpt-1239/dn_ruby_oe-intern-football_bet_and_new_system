@@ -1,0 +1,29 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <aside class="col-md-4">
+    <%= render "type_currencies" %>
+  </aside>
+
+  <div class="col-md-8">
+    <div class="text-center text-danger">
+      <% if currency_type? "payment", params[:type] %>
+        <h1><%= t ".payment" %></h1>
+      <% end %>
+      <% if currency_type? "withdrawal", params[:type] %>
+        <h1><%= t ".withdrawal" %></h1>
+      <% end %>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-6 offset-md-3">
+        <%= form_for @currency do |f| %>
+
+          <%= f.label :amount %>
+          <%= f.number_field :amount, class: "form-control" %>
+          <%= f.hidden_field :currency_type_id, value: params[:type]%>
+
+          <%= f.submit t(".submit"), class: "btn btn-primary btn-form" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

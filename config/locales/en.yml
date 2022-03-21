@@ -54,6 +54,9 @@ en:
       withdrawal: "Withdrawal "
       winning_bonus: "Winning Bonus"
       loss_money: "Loss money"
+    create:
+      success: "Create Success"
+      fails: "Create Fails"
 
   layouts:
     footer:
