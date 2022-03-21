@@ -34,11 +34,6 @@ vi:
       account_balance: "Số dư tài khoản: "
       history_balance: "Lịch sử số dư: "
       history_currencies: "Lịch sử  Ví tiền"
-      all: "Tất cả"
-      payment: "Nạp tiền"
-      withdrawal: "Rút tiền "
-      winning_bonus: "Thắng cược"
-      loss_money: "Thua cược"
     new:
       title: "Nạp/Rút tiền"
       account_balance: "Số dư tài khoản: "
@@ -50,6 +45,16 @@ vi:
       winning_bonus: "Thắng cược"
       loss_money: "Thua cược"
       submit: "Thực hiện"
+    type_currencies:
+      account_balance: "Số dư tài khoản: "
+      history_balance: "Lịch sử số dư "
+      history_currencies: "Lịch sử  Ví tiền"
+      all: "Tất cả"
+      payment: "Nạp tiền"
+      withdrawal: "Rút tiền "
+      winning_bonus: "Thắng cược"
+      loss_money: "Thua cược"
+
   layouts:
     footer:
       football_bet: "Cá cược bóng đá"

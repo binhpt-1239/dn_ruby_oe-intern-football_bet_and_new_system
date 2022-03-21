@@ -1,0 +1,26 @@
+<li id="currency-<%= currency.id %>">
+  <div class="row">
+    <div class="col-md-2"><%= link_to gravatar_for(currency.user), currency.user %></div>
+    <div class="col-md-10">
+      <span class="user"><%= link_to currency.user.name, currency.user %></span></br>
+      <span class="amount">
+        <%= number_to_currency currency.amount %>
+      </span>
+      <span class="notes">
+        <% if currency.payment? %>
+          </br><%= t ".add_money" %>
+        <% end %>
+        <% if currency.withdrawal? %>
+          </br><%= t ".take_money" %>
+        <% end %>
+        <% if currency.win? %>
+          </br><%= t ".win_money" %>
+        <% end %>
+        <% if currency.lose? %>
+          </br><%= t ".lose_money" %>
+        <% end %>
+        <%= time_ago_in_words(currency.created_at) %> <%= t ".intro" %></br>
+      </span></br>
+    </div>
+  </div>
+</li>

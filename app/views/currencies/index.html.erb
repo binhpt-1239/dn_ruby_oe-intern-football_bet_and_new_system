@@ -1,0 +1,21 @@
+<% provide :title, t(".history_balance") %>
+<div class="row">
+  <aside class="col-md-4">
+    <%= render "type_currencies" %>
+  </aside>
+
+  <div class="col-md-8">
+    <% if current_user.currencies.any? %>
+      <h3>
+        <%= t ".history_currencies" %>
+        (<%= current_user.currencies.search_by_type(params[:type]).count %>)
+      </h3>
+      <ol class="currencies">
+        <%= render @currencies %>
+      </ol>
+      <%== pagy_nav(@pagy) %>
+    <% else %>
+      <%= t ".empty" %>
+    <% end %>
+  </div>
+</div>
