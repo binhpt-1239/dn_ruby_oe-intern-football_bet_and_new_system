@@ -7,4 +7,7 @@ class SoccerMatch < ApplicationRecord
   has_many :goal_results, dependent: :destroy
 
   scope :newest, ->{order(time: :asc)}
+
+  delegate :name, to: :home_team, prefix: :home
+  delegate :name, to: :guest_team, prefix: :guest
 end

@@ -38,18 +38,13 @@ Tournament.create!(name: "BK - TB",
                      tournament_id: 1)
 end
 
-4.times do |n|
-  SoccerMatch.create!(season_tournament_id: 1, date_time: Time.now + (n+1).day,
-                      home_id: 1, guest_id: n+2)
-end
-
-Bet.create!(match_id: 1, rate: 1, bet_type: 1, content: "Team Home Win")
-Bet.create!(match_id: 1, rate: 1.5, bet_type: 2, content: "Tow Team Draw")
-Bet.create!(match_id: 1, rate: 1.8, bet_type: 3, content: "Team Guest Win")
-Bet.create!(match_id: 1, rate: 4, bet_type: 4, content: "Score: 0-0")
-Bet.create!(match_id: 1, rate: 5, bet_type: 5, content: "Score: 0-1")
-Bet.create!(match_id: 1, rate: 3, bet_type: 6, content: "Score: 1-0")
-Bet.create!(match_id: 1, rate: 8, bet_type: 7, content: "Score: 1-1")
+Bet.create!(soccer_match_id: 1, rate: 1, bet_type: 1, content: "Team Home Win")
+Bet.create!(soccer_match_id: 1, rate: 1.5, bet_type: 2, content: "Tow Team Draw")
+Bet.create!(soccer_match_id: 1, rate: 1.8, bet_type: 3, content: "Team Guest Win")
+Bet.create!(soccer_match_id: 1, rate: 4, bet_type: 4, content: "Score: 0-0")
+Bet.create!(soccer_match_id: 1, rate: 5, bet_type: 5, content: "Score: 0-1")
+Bet.create!(soccer_match_id: 1, rate: 3, bet_type: 6, content: "Score: 1-0")
+Bet.create!(soccer_match_id: 1, rate: 8, bet_type: 7, content: "Score: 1-1")
 
 currency_type = ["recharge", "withdraw", "win", "lose", "transfer"]
 5.times do |n|
