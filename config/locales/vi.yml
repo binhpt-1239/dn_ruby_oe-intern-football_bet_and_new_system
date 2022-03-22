@@ -54,6 +54,9 @@ vi:
       withdrawal: "Rút tiền "
       winning_bonus: "Thắng cược"
       loss_money: "Thua cược"
+    create:
+      success: "Tạo thành công"
+      fails: "Tạo thất bại"
 
   layouts:
     footer:
