@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :currencies, dependent: :nullify
+  has_many :user_bets, dependent: :destroy
   has_many :bets, through: :user_bets, dependent: :destroy
   has_many :newses, dependent: :nullify
   has_many :comments, dependent: :destroy
