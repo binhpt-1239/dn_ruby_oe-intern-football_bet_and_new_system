@@ -8,3 +8,10 @@
   </h2>
   <%= link_to t(".sign_up"), "#", class: "btn btn-lg btn-primary" %>
 </div>
+
+<div class="text-center mt-5">
+  <span class="text-center"> <%= t ".soccer_matches" %> </span>
+</div>
+<ol class="center"><%= render @soccer_matches %></ol>
+
+<%== pagy_nav(@pagy) %>

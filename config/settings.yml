@@ -6,3 +6,4 @@ digits:
   digit_6: 6
   digit_21: 21
 user_url: "https://secure.gravatar.com/avatar/"
+format_time: "%H:%M - %m/%d/%Y"

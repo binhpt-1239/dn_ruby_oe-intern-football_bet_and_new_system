@@ -1,0 +1,36 @@
+<li class="list-unstyled mt-4 border">
+  <div class="row mt-3 mb-3">
+    <div class="col">
+      <div class="soccer-match">
+        <%= image_tag("/assets/football-logo/#{soccer_match.home_name}.png",size: "150x150") %>
+      </div>
+      <div class="row soccer-match">
+        <%= soccer_match.home_name %>
+      </div>
+    </div>
+    <div class="col">
+      <div class="row soccer-match">
+        <span class="fw-bold"><%= t ".league", name: load_tournament(soccer_match.tournament_id) %></span>
+      </div>
+      <div class="row text-warning soccer-match">
+          <%= check_status_match(soccer_match.status) %>
+      </div>
+      <div class="row h1 soccer-match">
+        <%= calculate_score(soccer_match.home_team, soccer_match.id) %>
+         -
+        <%= calculate_score(soccer_match.guest_team, soccer_match.id) %></div>
+        <% if soccer_match.status %>
+          <%= button_to(t(".bet_btn"),"#", class: "btn btn-primary") %>
+        <% end %>
+        <%= time_handling(soccer_match.time) %>
+      <p> <%= @goal_result %> </p>
+    </div>
+    <div class="col">
+      <div class="soccer-match">
+        <%= image_tag("/assets/football-logo/#{soccer_match.guest_name}.png", size: "150x150") %>
+        </div>
+      <div class="row soccer-match">
+        <%= soccer_match.guest_name %>
+      </div>
+    </div>
+</li>
