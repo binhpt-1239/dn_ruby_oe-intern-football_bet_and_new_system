@@ -1,5 +1,8 @@
 class StaticPagesController < ApplicationController
-  def home; end
+  def home
+    @pagy, @soccer_matches = pagy SoccerMatch.includes(:home_team, :guest_team)
+                                             .newest
+  end
 
   def help; end
 

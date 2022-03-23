@@ -10,6 +10,11 @@ en:
           significant: false
           strip_insignificant_zeros: false
           unit: "$"
+  time:
+    formats:
+      default: "%H:%M - %m/%d/%Y"
+      long: "%B %d, %Y"
+      short: "%b %d"
   notification:
     log_in:
       err: "Sign In fails"
@@ -22,6 +27,27 @@ en:
       create:
         success: "Create Success"
         fails: "Create Fails"
+
+  bets:
+    index:
+      list_bet: "List Bets"
+      title_#: "#"
+      title_content: "Content"
+      title_rate: "Rate"
+      title_action: "Action"
+      not_found_match: "Not found soccer match"
+      infor_match: "Information Match"
+      home: "Home: "
+      guest: "Guest: "
+      day: "Day: "
+      empty: "Bets empty"
+    bet_infor:
+      info: "Information Bet"
+      content: "Content"
+      rate: "Rate"
+      match: "Match"
+    bet:
+      bet: "Bet"
   currencies:
     currency:
       add_money: "Add money "
@@ -53,10 +79,6 @@ en:
       withdrawal: "Withdrawal "
       winning_bonus: "Winning Bonus"
       loss_money: "Loss money"
-    create:
-      success: "Create Success"
-      fails: "Create Fails"
-
   layouts:
     footer:
       football_bet: "Football Bet"
@@ -112,10 +134,39 @@ en:
       withdrawal: "Withdrawal "
       winning_bonus: "Winning Bonus"
       loss_money: "Loss money"
+  user_bets:
+    new:
+      bet: "Bet"
+    create:
+      fails: "Create Your Bet Fails"
+      success: "Create Your Bet Success"
+      amount_invalid: "Amount Bet invalid"
+      not_found_bet: "Bet not found"
+    index:
+      title: "History User Bet"
+      type_bet: "Type History"
+      all: "All"
+      close: "Closed"
+      waiting: "Waiting"
+      title_#: "#"
+      title_id: "Id Bet"
+      title_amount: "Amount"
+      title_action: "Action"
+      at: "At"
+    user_bet:
+      intro: " ago"
+  soccer_matches:
+    soccer_match:
+      league: "%{name} League"
+      finish_status: "The match is over"
+      unfinished-status: "The match hasn't happened yet"
+      bet_btn: "Bet"
+
   activerecord:
     models:
       user: "User"
       currency: "Currency"
+      user_bet: "Bet"
     attributes:
       user:
         name: "Name"
@@ -125,9 +176,5 @@ en:
         submit: "Submit"
       currency:
         amount: "Amount"
-  soccer_matches:
-    soccer_match:
-      league: "%{name} League"
-      finish_status: "The match is over"
-      unfinished-status: "The match hasn't happened yet"
-      bet_btn: "Bet"
+      user_bet:
+        bet_amount: "Amount:"

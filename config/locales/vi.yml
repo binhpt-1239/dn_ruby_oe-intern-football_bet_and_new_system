@@ -10,6 +10,11 @@ vi:
           significant: false
           strip_insignificant_zeros: false
           unit: "đô"
+  time:
+    formats:
+      default: "%H:%M - %m/%d/%Y"
+      long: "%B %d, %Y"
+      short: "%b %d"
   notification:
     log_in:
       err: "Đăng nhập thất bại"
@@ -22,6 +27,27 @@ vi:
       create:
         success: "Tạo thành công"
         fails: "Tạo thất bại"
+
+  bets:
+    index:
+      list_bet: "Danh sách kèo cược"
+      title_#: "#"
+      title_content: "Nội dung kèo"
+      title_rate: "Tỉ lệ"
+      title_action: "Hành động"
+      infor_match: "Thông tin trận đấu"
+      home: "Đội nhà: "
+      guest: "Đội khách: "
+      day: "Lịch: "
+      empty: "Danh sách kèo rỗng"
+    bet_infor:
+      info: "Thông tin đặt cược"
+      content: "Nội dung"
+      rate: "Tỉ lệ"
+      match: "Trận đấu"
+      not_found_match: "Không tìm thấy trận đấu"
+    bet:
+      bet: "Cược"
   currencies:
     currency:
       add_money: "Nạp tiền"
@@ -53,9 +79,6 @@ vi:
       withdrawal: "Rút tiền "
       winning_bonus: "Thắng cược"
       loss_money: "Thua cược"
-    create:
-      success: "Tạo thành công"
-      fails: "Tạo thất bại"
   layouts:
     footer:
       football_bet: "Cá cược bóng đá"
@@ -111,10 +134,39 @@ vi:
       withdrawal: "Rút tiền "
       winning_bonus: "Thắng cược"
       loss_money: "Thua cược"
+  user_bets:
+    new:
+      bet: "Cược"
+    create:
+      fails: "Bạn đặt cược thất bại"
+      success: "Bạn đặt cược thành công"
+      amount_invalid: "Tiền đặt cược không hợp lệ"
+      not_found_bet: "Không tìm thấy kèo"
+    index:
+      title: "Lịch sử cược"
+      type_bet: "Loại lịch sử"
+      all: "Tất cả"
+      close: "Đã đóng"
+      waiting: "Đang chờ"
+      title_#: "#"
+      title_id: "Id"
+      title_amount: "Số dư"
+      title_action: "Hành động"
+      at: "Lúc"
+    user_bet:
+      intro: " trước"
+  soccer_matches:
+    soccer_match:
+      league: "Giải đấu %{name}"
+      finished-status: "Trận đấu đã diễn ra"
+      unfinished-status: "Trận đấu chưa diễn ra"
+      bet_btn: "Đặt cược"
+
   activerecord:
     models:
       user: "User"
       currency: "Currency"
+      user_bet: "Bet"
     attributes:
       user:
         name: "Tên"
@@ -124,9 +176,5 @@ vi:
         submit: "Thực hiện"
       currency:
         amount: "Số tiền"
-  soccer_matches:
-    soccer_match:
-      league: "Giải đấu %{name}"
-      finished-status: "Trận đấu đã diễn ra"
-      unfinished-status: "Trận đấu chưa diễn ra"
-      bet_btn: "Đặt cược"
+      user_bet:
+        bet_amount: "Số tiền"
