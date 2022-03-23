@@ -23,25 +23,19 @@ Player.create!(name: name,
       number: number)
 end
 
+football_team = ["Arsenal", "Barca", "Juventus", "Manchester United", "Real Madrid"]
 5.times do |n|
-name = Faker::Sports::Football.team
-Team.create!(name: name)
+  name = football_team[n]
+  Team.create!(name: name)
 end
 
-Season.create!(name: "2021 - 2022",
-    begin_year: 2021,
-    end_year: 2022)
-
-Tournament.create!(name: "BK-TB",
-        begin_time: "2021-06-15 00:30:00",
-        end_time: "2022-06-15 00:30:00")
-
-SeasonTournament.create!(season_id: 1,
-              tournament_id: 1)
+Tournament.create!(name: "BK - TB",
+                   begin_time: "2021-06-15",
+                   end_time: "2022-06-15")
 
 5.times do |n|
-TeamSeasonTournament.create!(team_id: n+1,
-          season_tournament_id: 1)
+  TeamTournament.create!(team_id: n+1,
+                     tournament_id: 1)
 end
 
 4.times do |n|
@@ -79,11 +73,10 @@ end
 
 random_id = (1..50).to_a.shuffle
 50.times do |n|
-player_id = random_id[n]
-team_id = n / 10
-team_id = 5 if team_id == 0
-PlayerInfo.create!(player_id: player_id,
-          team_id: team_id,
-          season_tournament_id: 1
-)
+  player_id = random_id[n]
+  team_id = n / 10
+  team_id = 5 if team_id == 0
+  PlayerInfo.create!(player_id: player_id,
+                     team_tournament_id: team_id
+  )
 end

@@ -22,7 +22,6 @@ en:
       create:
         success: "Create Success"
         fails: "Create Fails"
-
   currencies:
     currency:
       add_money: "Add money "
@@ -89,6 +88,7 @@ en:
       sign_up: "Sign up now!"
       intro_home1: "This is the home page for the"
       intro_home2: "football bet application."
+      soccer_matches: "Soccer Matches"
     help:
       help: "Help"
       intro_help1: "Get help on the Football Bet at the "
@@ -112,7 +112,6 @@ en:
       withdrawal: "Withdrawal "
       winning_bonus: "Winning Bonus"
       loss_money: "Loss money"
-
   activerecord:
     models:
       user: "User"
@@ -126,3 +125,9 @@ en:
         submit: "Submit"
       currency:
         amount: "Amount"
+  soccer_matches:
+    soccer_match:
+      league: "%{name} League"
+      finish_status: "The match is over"
+      unfinished-status: "The match hasn't happened yet"
+      bet_btn: "Bet"

@@ -1,5 +1,5 @@
 class Bet < ApplicationRecord
-  belongs_to :soccer_match, foreign_key: :match_id
+  belongs_to :soccer_match, foreign_key: :soccer_match_id
 
   has_many :user_bets, dependent: :destroy
   has_many :users, through: :user_bets
