@@ -10,7 +10,7 @@
     </div>
     <div class="col">
       <div class="row soccer-match">
-        <span class="fw-bold"><%= t ".league", name: load_tournament(soccer_match.tournament_id) %></span>
+        <span class="fw-bold"><%= t ".league", name: soccer_match.tournament_name %></span>
       </div>
       <div class="row text-warning soccer-match">
           <%= check_status_match(soccer_match.status) %>

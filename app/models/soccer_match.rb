@@ -10,4 +10,5 @@ class SoccerMatch < ApplicationRecord
 
   delegate :name, to: :home_team, prefix: :home
   delegate :name, to: :guest_team, prefix: :guest
+  delegate :name, to: :tournament, prefix: :tournament
 end
