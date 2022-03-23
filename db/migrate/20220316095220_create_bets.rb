@@ -3,7 +3,8 @@ class CreateBets < ActiveRecord::Migration[6.0]
     create_table :bets do |t|
       t.references :match, null: false, foreign_key: true
       t.float :rate
-      t.string :type
+      t.integer :bet_type
+      t.string :content
 
       t.timestamps
     end

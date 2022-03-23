@@ -15,7 +15,8 @@ ActiveRecord::Schema.define(version: 2022_03_18_044002) do
   create_table "bets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "match_id", null: false
     t.float "rate"
-    t.string "type"
+    t.integer "bet_type"
+    t.string "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["match_id"], name: "index_bets_on_match_id"
@@ -121,12 +122,10 @@ ActiveRecord::Schema.define(version: 2022_03_18_044002) do
     t.bigint "user_id", null: false
     t.float "bet_amount"
     t.bigint "bet_id", null: false
-    t.bigint "team_id", null: false
     t.boolean "result"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["bet_id"], name: "index_user_bets_on_bet_id"
-    t.index ["team_id"], name: "index_user_bets_on_team_id"
     t.index ["user_id"], name: "index_user_bets_on_user_id"
   end
 
@@ -157,6 +156,5 @@ ActiveRecord::Schema.define(version: 2022_03_18_044002) do
   add_foreign_key "team_season_tournaments", "season_tournaments"
   add_foreign_key "team_season_tournaments", "teams"
   add_foreign_key "user_bets", "bets"
-  add_foreign_key "user_bets", "teams"
   add_foreign_key "user_bets", "users"
 end
