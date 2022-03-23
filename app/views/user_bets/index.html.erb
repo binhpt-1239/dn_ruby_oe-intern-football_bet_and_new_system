@@ -1,0 +1,42 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <aside class="col-md-2">
+    <div class="dropdown mt-3">
+      <button class="btn dropdown-toggle fs-4 text-danger" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        <%= t ".type_bet" %>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><%= link_to t(".all"), "#", class: "dropdown-item" %></li>
+        <li><%= link_to t(".close"), "#", class: "dropdown-item" %></li>
+        <li><%= link_to t(".waiting"), "#", class: "dropdown-item" %></li>
+      </ul>
+    </div>
+  </aside>
+
+  <div class="col-md-10 mt-3">
+    <h3 class="text-danger text-primary">
+      <%= t ".title" %>
+    </h3>
+    <div class="row mt-3">
+      <div class="col-md-1 text-primary">
+        <%= t ".title_#" %>
+      </div>
+      <div class="col-md-3 text-primary">
+        <%= t ".title_id" %>
+      </div>
+      <div class="col-md-2 text-center text-primary">
+        <%= t ".title_amount" %>
+      </div>
+      <div class="col-md-3 text-center text-primary">
+        <%= t ".at" %>
+      </div>
+      <div class="col-md-3 text-primary">
+        <%= t ".title_action" %>
+      </div>
+    </div>
+    <ol class="user_bets">
+      <%= render(@user_bets) || t(".empty") %>
+    </ol>
+    <%== pagy_nav @pagy %>
+  </div>
+</div>

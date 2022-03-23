@@ -35,6 +35,7 @@ vi:
       title_content: "Nội dung kèo"
       title_rate: "Tỉ lệ"
       title_action: "Hành động"
+      not_found_match: "Không tìm thấy trận đấu"
       infor_match: "Thông tin trận đấu"
       home: "Đội nhà: "
       guest: "Đội khách: "
@@ -45,7 +46,6 @@ vi:
       content: "Nội dung"
       rate: "Tỉ lệ"
       match: "Trận đấu"
-      not_found_match: "Không tìm thấy trận đấu"
     bet:
       bet: "Cược"
   currencies:
@@ -53,7 +53,7 @@ vi:
       add_money: "Nạp tiền"
       take_money: "Rút tiền"
       win_money: "Thắng cược"
-      lose_money: "Thua cược"
+      lose_money: "Đặt cược"
       intro: "trước"
     index:
       account_balance: "Số dư tài khoản: "
@@ -68,7 +68,7 @@ vi:
       payment: "Nạp tiền"
       withdrawal: "Rút tiền "
       winning_bonus: "Thắng cược"
-      loss_money: "Thua cược"
+      loss_money: "Đặt cược"
       submit: "Thực hiện"
     type_currencies:
       account_balance: "Số dư tài khoản: "
@@ -78,7 +78,7 @@ vi:
       payment: "Nạp tiền"
       withdrawal: "Rút tiền "
       winning_bonus: "Thắng cược"
-      loss_money: "Thua cược"
+      loss_money: "Đặt cược"
   layouts:
     footer:
       football_bet: "Cá cược bóng đá"
@@ -157,12 +157,21 @@ vi:
       at: "Lúc"
     user_bet:
       intro: " trước"
+      update: "Cập nhật"
+      delete: "Xóa"
   soccer_matches:
     soccer_match:
       league: "Giải đấu %{name}"
       finished-status: "Trận đấu đã diễn ra"
       unfinished-status: "Trận đấu chưa diễn ra"
       bet_btn: "Đặt cược"
+  admin:
+    soccer_matches:
+      soccer_match:
+        set_bet_btn: "Tạo kèo đặt cược"
+      index:
+        request_login: "Vui lòng đăng nhập trước"
+        not_allow: "Tài khoản của bạn không có quyền truy cập đến trang này"
 
   activerecord:
     models:
@@ -179,17 +188,4 @@ vi:
       currency:
         amount: "Số tiền"
       user_bet:
-        bet_amount: "Số tiền"
-  soccer_matches:
-    soccer_match:
-      league: "Giải đấu %{name}"
-      finished-status: "Trận đấu đã diễn ra"
-      unfinished-status: "Trận đấu chưa diễn ra"
-      bet_btn: "Đặt cược"
-  admin:
-    soccer_matches:
-      soccer_match:
-        set_bet_btn: "Tạo kèo đặt cược"
-      index:
-        request_login: "Vui lòng đăng nhập trước"
-        not_allow: "Tài khoản của bạn không có quyền truy cập đến trang này"
+        amount: "Số tiền"

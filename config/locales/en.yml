@@ -157,12 +157,21 @@ en:
       at: "At"
     user_bet:
       intro: " ago"
+      update: "Update"
+      delete: "Delete"
   soccer_matches:
     soccer_match:
       league: "%{name} League"
       finish_status: "The match is over"
       unfinished-status: "The match hasn't happened yet"
       bet_btn: "Bet"
+  admin:
+    soccer_matches:
+      soccer_match:
+        set_bet_btn: "Set Bet"
+      index:
+        request_login: "Please login first"
+        not_allow: "you do not have permission to access this page"
 
   activerecord:
     models:
@@ -179,17 +188,4 @@ en:
       currency:
         amount: "Amount"
       user_bet:
-        bet_amount: "Amount:"
-  soccer_matches:
-    soccer_match:
-      league: "%{name} League"
-      finish_status: "The match is over"
-      unfinished-status: "The match hasn't happened yet"
-      bet_btn: "Bet"
-  admin:
-    soccer_matches:
-      soccer_match:
-        set_bet_btn: "Set Bet"
-      index:
-        request_login: "Please login first"
-        not_allow: "you do not have permission to access this page"
+        amount: "Amount:"

@@ -13,7 +13,8 @@ class User < ApplicationRecord
             length: {maximum: Settings.user.email.max_length},
             format: {with: Settings.user.email.VALID_EMAIL_REGEX.freeze}
   validates :password,
-            length: {in: Settings.digits.digit_6..Settings.digits.digit_21}
+            length: {in: Settings.digits.digit_6..Settings.digits.digit_21},
+            allow_nil: true
 
   has_secure_password
 

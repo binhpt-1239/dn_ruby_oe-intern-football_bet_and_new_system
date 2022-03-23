@@ -9,7 +9,7 @@ class BetsController < ApplicationController
   private
 
   def load_match
-    @match = SoccerMatch.find_by id: 1 # thay 1 = params[:id] sau
+    @match = SoccerMatch.find_by id: params[:match_id]
     return if @match
 
     flash[:warning] = t ".not_found_match"

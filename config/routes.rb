@@ -10,12 +10,18 @@ Rails.application.routes.draw do
 
     resources :users, only: :show
     resources :currencies, only: %i(new create index)
-    resources :bets, only: :index
 
     namespace :admin do
       resources :bets
       resources :soccer_matches
       root to: "soccer_matches#index"
     end
+
+    resources :bets, only: :index do
+      member do
+        resources :user_bets, only: %i(new create)
+      end
+    end
+    get "/user_bets", to: "user_bets#index"
   end
 end
