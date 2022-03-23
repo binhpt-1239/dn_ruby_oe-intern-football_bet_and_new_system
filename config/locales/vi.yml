@@ -22,7 +22,6 @@ vi:
       create:
         success: "Tạo thành công"
         fails: "Tạo thất bại"
-
   currencies:
     currency:
       add_money: "Nạp tiền"
@@ -57,7 +56,6 @@ vi:
     create:
       success: "Tạo thành công"
       fails: "Tạo thất bại"
-
   layouts:
     footer:
       football_bet: "Cá cược bóng đá"
@@ -89,6 +87,7 @@ vi:
       sign_up: "Đăng kí ngay!"
       intro_home1: "Đây là trang chủ của"
       intro_home2: "ứng dụng Cá cược bóng đá."
+      soccer_matches: "Danh sách trận đấu"
     help:
       help: "Hỗ trợ"
       intro_help1: "Nhận trợ giúp về Hướng dẫn Cá cược bóng đá tại "
@@ -112,7 +111,6 @@ vi:
       withdrawal: "Rút tiền "
       winning_bonus: "Thắng cược"
       loss_money: "Thua cược"
-
   activerecord:
     models:
       user: "User"
@@ -126,3 +124,9 @@ vi:
         submit: "Thực hiện"
       currency:
         amount: "Số tiền"
+  soccer_matches:
+    soccer_match:
+      league: "Giải đấu %{name}"
+      finished-status: "Trận đấu đã diễn ra"
+      unfinished-status: "Trận đấu chưa diễn ra"
+      bet_btn: "Đặt cược"
