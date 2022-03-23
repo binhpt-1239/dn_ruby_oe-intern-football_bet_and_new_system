@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     delete "/logout", to: "sessions#destroy"
     resources :users, only: :show
     resources :currencies, only: %i(new create index)
+    resources :bets, only: :index
   end
 end
