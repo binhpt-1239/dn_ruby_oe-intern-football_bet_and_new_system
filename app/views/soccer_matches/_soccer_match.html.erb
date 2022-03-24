@@ -22,10 +22,13 @@
          -
         <%= calculate_score(soccer_match.guest_team, soccer_match.id) %>
       </div>
+      <div class="row">
         <% unless soccer_match.status %>
           <%= link_to t(".bet_btn"), bets_path(match_id: soccer_match.id), class: "btn btn-primary" %>
-        <% end %>
+        <% end %></div>
         <%= time_handling(soccer_match.time) %>
+
+
     </div>
     <div class="col">
       <div class="soccer-match">

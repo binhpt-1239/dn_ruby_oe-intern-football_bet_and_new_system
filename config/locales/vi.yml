@@ -104,6 +104,8 @@ vi:
       setting: "  Cài đặt"
       log_out: "  Đăng xuất"
       home: " Trang chủ"
+    asider_admin:
+      create_soccer_match: "Tạo trận đấu"
   static_pages:
     home:
       football_bet: "Cá cược bóng đá"
@@ -164,9 +166,10 @@ vi:
     unfinished-status: "Trận đấu chưa diễn ra"
     soccer_match:
       league: "Giải đấu %{name}"
-      finished-status: "Trận đấu đã diễn ra"
-      unfinished-status: "Trận đấu chưa diễn ra"
+      finished_status: "Trận đấu đã diễn ra"
+      not_happen_status: "Trận đấu chưa diễn ra"
       bet_btn: "Đặt cược"
+
   admin:
     soccer_matches:
       soccer_match:
@@ -174,6 +177,26 @@ vi:
         show_bet_win: "Danh sách user thắng cược"
         show_bet_win_score: "Danh sách user thắng cược tỉ số"
         set_bet_btn: "Tạo kèo đặt cược"
+        set_bet_btn: "Tạo kèo"
+        edit_match_btn: "Chỉnh sửa"
+      new:
+        new_btn: "Tạo trận đấu"
+        title: "Tạo trận đấu"
+      edit:
+        edit_btn: "Chỉnh sửa"
+        title: "Chỉnh sửa trận đấu"
+        id: "ID trận đấu: %{id}"
+      form:
+        tournaments: "Giải đấu: "
+        home_team: "Sân nhà: "
+        guest_team: "Sân Khách: "
+        match_time: "Thời gian thi đấu: "
+      create:
+        successful_create: "Tạo trận đấu thành công"
+        failure_create: "Tạo trận đấu không thành công"
+      update:
+        successful_update: "chỉnh sửa trận đấu thành công"
+        failure_update: "Chỉnh sửa trận đấu không thành công"
       index:
         request_login: "Vui lòng đăng nhập trước"
         not_allow: "Tài khoản của bạn không có quyền truy cập đến trang này"

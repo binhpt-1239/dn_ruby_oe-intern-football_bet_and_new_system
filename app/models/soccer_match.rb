@@ -8,10 +8,7 @@ class SoccerMatch < ApplicationRecord
 
   delegate :name, to: :home_team, prefix: :home, allow_nil: true
   delegate :name, to: :guest_team, prefix: :guest, allow_nil: true
+  delegate :name, to: :tournament, prefix: :tournament, allow_nil: true
 
   scope :newest, ->{order(time: :asc)}
-
-  delegate :name, to: :home_team, prefix: :home
-  delegate :name, to: :guest_team, prefix: :guest
-  delegate :name, to: :tournament, prefix: :tournament
 end

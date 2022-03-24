@@ -1,0 +1,18 @@
+<%= form_for(@soccer_match, url: yield(:url)) do |f| %>
+  <%= f.label t(".tournaments"), class: "mt-3" %>
+  <%= f.select :tournament_id, options_for_select(@tournaments.collect{ |t| [t.name, t.id] }), {}, class: "form-control" %>
+
+  <%= f.label t(".home_team"), class: "mt-3" %>
+  <%= f.select :home_id, options_for_select(@teams.collect{ |t| [t.name, t.id] }, @soccer_match.home_id), {}, class: "form-control" %>
+
+  <%= f.label t(".guest_team"), class: "mt-3" %>
+  <%= f.select :guest_id, options_for_select(@teams.collect{ |t| [t.name, t.id] }, @soccer_match.guest_id), {}, class: "form-control" %>
+
+  <%= f.label t(".match_time"), class: "mt-3 row" %>
+  <%= f.datetime_select :time %>
+
+  <div class="mt-3 text-center">
+    <%= f.submit yield(:btn_match), class: "btn btn-primary" %>
+  </div>
+
+<% end %>

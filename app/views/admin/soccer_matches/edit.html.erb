@@ -1,0 +1,11 @@
+<% provide(:title, t(".title")) %>
+<% provide(:url, admin_soccer_match_path(params[:id])) %>
+<% provide(:btn_match, t(".edit_btn")) %>
+<h1 class="text-center"> <%= t".title" %> </h1>
+<h5> <%= t".id", id: @soccer_match.id %></h5>
+
+<div class="row mt-3 soccer-match">
+  <div class="col-md-6 col-md-offset-3">
+    <%= render "form" %>
+  </div>
+</div>
