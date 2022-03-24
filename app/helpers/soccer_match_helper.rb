@@ -8,10 +8,6 @@ module SoccerMatchHelper
   end
 
   def check_status_match status
-    if status
-      t ".finished-status"
-    else
-      t ".unfinished-status"
-    end
+    t "soccer_matches.soccer_match.#{status ? 'finished-status' : 'unfinished'}"
   end
 end

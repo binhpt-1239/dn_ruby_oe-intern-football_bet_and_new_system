@@ -9,28 +9,29 @@
       </div>
     </div>
     <div class="col">
-      <div class="row soccer-match">
-        <span class="fw-bold">
-          <%= t ".league", name: soccer_match.tournament_name %>
-        </span>
+      <div class="soccer-match">
+        <span class="fw-bold"><%= t "soccer_matches.soccer_match.league", name: soccer_match.tournament_name %></span>
       </div>
-      <div class="row text-warning soccer-match">
-        <%= check_status_match(soccer_match.status) %>
+      <div class="text-warning soccer-match">
+          <%= check_status_match(soccer_match.status) %>
       </div>
       <div class="row h1 soccer-match">
         <%= calculate_score(soccer_match.home_team, soccer_match.id) %>
          -
         <%= calculate_score(soccer_match.guest_team, soccer_match.id) %>
       </div>
-        <% unless soccer_match.status %>
-          <%= button_to(t(".bet_btn"),"#", class: "btn btn-primary") %>
-        <% end %>
+      <div class="soccer-match">
+        <%= button_to(t(".set_bet_btn"),"#", class: "btn btn-primary") %>
+      </div>
+      <div class="soccer-match">
         <%= time_handling(soccer_match.time) %>
+      </div>
     </div>
+
     <div class="col">
       <div class="soccer-match">
         <%= image_tag("/assets/football-logo/#{soccer_match.guest_name}.png", size: "150x150") %>
-      </div>
+        </div>
       <div class="row soccer-match">
         <%= soccer_match.guest_name %>
       </div>

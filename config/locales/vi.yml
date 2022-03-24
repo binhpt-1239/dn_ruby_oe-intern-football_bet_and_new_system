@@ -94,7 +94,8 @@ vi:
       contact: "Liên hệ"
       new: "Tin tức mới"
       log_in: "Đăng nhập"
-    asider:
+  shared:
+    asider_user:
       bets: "  Cá cược"
       charts: "  Bảng Xếp hạng"
       schedule: "  Lịch thi đấu"
@@ -102,6 +103,7 @@ vi:
       profile: "  Hồ sơ"
       setting: "  Cài đặt"
       log_out: "  Đăng xuất"
+      home: " Trang chủ"
   static_pages:
     home:
       football_bet: "Cá cược bóng đá"
@@ -178,3 +180,16 @@ vi:
         amount: "Số tiền"
       user_bet:
         bet_amount: "Số tiền"
+  soccer_matches:
+    soccer_match:
+      league: "Giải đấu %{name}"
+      finished-status: "Trận đấu đã diễn ra"
+      unfinished-status: "Trận đấu chưa diễn ra"
+      bet_btn: "Đặt cược"
+  admin:
+    soccer_matches:
+      soccer_match:
+        set_bet_btn: "Tạo kèo đặt cược"
+      index:
+        request_login: "Vui lòng đăng nhập trước"
+        not_allow: "Tài khoản của bạn không có quyền truy cập đến trang này"

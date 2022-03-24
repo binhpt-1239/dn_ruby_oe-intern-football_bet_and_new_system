@@ -7,8 +7,15 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
+
     resources :users, only: :show
     resources :currencies, only: %i(new create index)
     resources :bets, only: :index
+
+    namespace :admin do
+      resources :bets
+      resources :soccer_matches
+      root to: "soccer_matches#index"
+    end
   end
 end

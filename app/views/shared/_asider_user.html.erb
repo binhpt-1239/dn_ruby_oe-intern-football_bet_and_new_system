@@ -1,0 +1,27 @@
+<li>
+  <i class="bi-person-circle fs-6">__<%= current_user.name %></i>
+</li>
+<li>
+  <i><%= t ".wallet" %>:<%= number_to_currency(sum_amount current_user) %></i>
+</li>
+<li class="nav-item">
+  <%= link_to t(".bets"), "#", class: "nav-link py-3 px-2 bi-house fs-6" %>
+</li>
+<li>
+  <%= link_to t(".charts"), "#", class: "nav-link py-3 px-2 bi-bar-chart-steps fs-6" %>
+</li>
+<li>
+  <%= link_to t(".schedule"), "#", class: "nav-link py-3 px-2 bi-calendar3 fs-6" %>
+</li>
+<li>
+  <%= link_to t(".wallet"), currencies_path, class: "nav-link py-3 px-2 bi-credit-card-2-back-fill fs-6" %>
+</li>
+<li>
+  <%= link_to t(".profile"), current_user, class: "nav-link py-3 px-2 bi-people fs-6" %>
+</li>
+<li>
+  <%= link_to t(".setting"), "#", class: "nav-link py-3 px-2 bi-wrench fs-6" %>
+</li>
+<li>
+  <%= link_to t(".log_out"), logout_path, method: "delete", class: "nav-link py-3 px-2 bi-stop-circle-fill fs-6" %>
+</li>
