@@ -14,9 +14,4 @@ module SoccerMatchHelper
       t ".unfinished-status"
     end
   end
-
-  def load_tournament tournament_id
-    tournament = Tournament.find_by id: tournament_id
-    tournament.name
-  end
 end
