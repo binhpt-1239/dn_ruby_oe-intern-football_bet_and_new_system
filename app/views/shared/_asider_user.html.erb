@@ -5,7 +5,7 @@
   <i><%= t ".wallet" %>:<%= number_to_currency(sum_amount current_user) %></i>
 </li>
 <li class="nav-item">
-  <%= link_to t(".bets"), "#", class: "nav-link py-3 px-2 bi-house fs-6" %>
+  <%= link_to t(".bets"), Settings.user_bets_path, class: "nav-link py-3 px-2 bi-house fs-6" %>
 </li>
 <li>
   <%= link_to t(".charts"), "#", class: "nav-link py-3 px-2 bi-bar-chart-steps fs-6" %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_23_032629) do
+ActiveRecord::Schema.define(version: 2022_03_23_143137) do
 
   create_table "bets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "soccer_match_id", null: false
@@ -117,11 +117,11 @@ ActiveRecord::Schema.define(version: 2022_03_23_032629) do
   create_table "user_bets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id"
     t.float "amount"
-    t.bigint "soccer_match_id"
     t.boolean "result_bet"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["soccer_match_id"], name: "index_user_bets_on_soccer_match_id"
+    t.bigint "bet_id"
+    t.index ["bet_id"], name: "index_user_bets_on_bet_id"
     t.index ["user_id"], name: "index_user_bets_on_user_id"
   end
 
@@ -149,6 +149,6 @@ ActiveRecord::Schema.define(version: 2022_03_23_032629) do
   add_foreign_key "soccer_matches", "tournaments"
   add_foreign_key "team_tournaments", "teams"
   add_foreign_key "team_tournaments", "tournaments"
-  add_foreign_key "user_bets", "soccer_matches"
+  add_foreign_key "user_bets", "bets"
   add_foreign_key "user_bets", "users"
 end

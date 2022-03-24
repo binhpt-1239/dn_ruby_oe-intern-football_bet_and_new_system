@@ -1,0 +1,19 @@
+<li id="user_bet-<%= user_bet.id %>">
+  <div class="row mt-3">
+    <div class="col-md-4 text-center">
+      <%= user_bet.bet_content %>:
+      <%= user_bet.bet.soccer_match.home_name %>-
+      <%= user_bet.bet.soccer_match.guest_name %>
+    </div>
+    <div class="col-md-2 text-center">
+      <%= user_bet.amount %>
+    </div>
+    <div class="col-md-3 text-center">
+      <%= time_ago_in_words(user_bet.created_at) %> <%= t ".intro" %>
+    </div>
+    <div class="col-md-3">
+      <%= link_to t(".update"), "#" %>|
+      <%= link_to t(".delete"), "#" %>
+    </div>
+  </div>
+</li>
