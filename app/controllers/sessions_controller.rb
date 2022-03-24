@@ -27,7 +27,9 @@ class SessionsController < ApplicationController
   def login_succes user
     log_in user
     params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-    redirect_to root_path
+
+    redirect_to(user.admin? ? admin_root_url : root_url)
+
     flash[:success] = t "notification.log_in.success"
   end
 end
