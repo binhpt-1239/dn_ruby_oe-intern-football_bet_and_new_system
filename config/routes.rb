@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :currencies, only: %i(new create index)
 
     namespace :admin do
+      resources :user_bets, only: :index
       resources :bets
       resources :soccer_matches
       root to: "soccer_matches#index"

@@ -21,7 +21,19 @@
         <%= calculate_score(soccer_match.guest_team, soccer_match.id) %>
       </div>
       <div class="soccer-match">
-        <%= button_to(t(".set_bet_btn"),"#", class: "btn btn-primary") %>
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= t ".action" %>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <% unless soccer_match.status %>
+              <li><%= link_to t(".set_bet_btn"),"#", class: "dropdown-item" %></li>
+            <% else %>
+              <li><%= link_to t(".show_bet_win"), admin_user_bets_path(match_id: soccer_match.id), class: "dropdown-item" %></li>
+              <li><%= link_to t(".show_bet_win_score"), admin_user_bets_path(match_id: soccer_match.id, score: true), class: "dropdown-item" %></li>
+            <% end %>
+          </ul>
+        </div>
       </div>
       <div class="soccer-match">
         <%= time_handling(soccer_match.time) %>

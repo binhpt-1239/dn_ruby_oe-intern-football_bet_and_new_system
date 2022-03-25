@@ -160,6 +160,8 @@ en:
       update: "Update"
       delete: "Delete"
   soccer_matches:
+    finish_status: "The match is over"
+    unfinished-status: "The match hasn't happened yet"
     soccer_match:
       league: "%{name} League"
       finish_status: "The match is over"
@@ -168,10 +170,28 @@ en:
   admin:
     soccer_matches:
       soccer_match:
+        action: "Action"
+        show_bet_win: "Show user bets win"
+        show_bet_win_score: "Show user bets score win"
         set_bet_btn: "Set Bet"
       index:
         request_login: "Please login first"
         not_allow: "you do not have permission to access this page"
+    user_bets:
+      not_found_match: "Not found match"
+      match_not_begin: "Match not begin"
+      index:
+        title: "User Bet Win"
+        title_#: "#"
+        title_id: "Id Bet"
+        title_user: "User"
+        title_amount: "Amount"
+        title_action: "Action"
+        at: "At"
+        empty: "Empty"
+      user_bet:
+        intro: " ago"
+        result_money: "result money "
 
   activerecord:
     models:

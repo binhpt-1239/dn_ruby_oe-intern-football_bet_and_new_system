@@ -1,0 +1,32 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <div class="col mt-3">
+    <h3 class="text-danger text-primary">
+      <%= t ".title" %>
+    </h3>
+    <div class="row mt-3">
+      <div class="col-md-1 text-primary">
+        <%= t ".title_#" %>
+      </div>
+      <div class="col-md-3 text-primary">
+        <%= t ".title_id" %>
+      </div>
+      <div class="col-md-2 text-center text-primary">
+        <%= t ".title_amount" %>
+      </div>
+      <div class="col-md-2 text-center text-primary">
+        <%= t ".title_user" %>
+      </div>
+      <div class="col-md-2 text-center text-primary">
+        <%= t ".at" %>
+      </div>
+      <div class="col-md-2 text-primary">
+        <%= t ".title_action" %>
+      </div>
+    </div>
+    <ol class="user_bets">
+      <%= render(@user_bets) || t(".empty") %>
+    </ol>
+    <%== pagy_nav @pagy %>
+  </div>
+</div>

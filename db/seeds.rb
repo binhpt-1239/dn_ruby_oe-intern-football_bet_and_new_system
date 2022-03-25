@@ -50,6 +50,7 @@ Bet.create!(soccer_match_id: 1, rate: 4, bet_type: 4, content: "Score: 0-0")
 Bet.create!(soccer_match_id: 1, rate: 5, bet_type: 5, content: "Score: 0-1")
 Bet.create!(soccer_match_id: 1, rate: 3, bet_type: 6, content: "Score: 1-0")
 Bet.create!(soccer_match_id: 1, rate: 8, bet_type: 7, content: "Score: 1-1")
+Bet.create!(soccer_match_id: 1, rate: 8, bet_type: 8, content: "Score other")
 
 currency_type = ["recharge", "withdraw", "win", "lose", "transfer"]
 5.times do |n|
