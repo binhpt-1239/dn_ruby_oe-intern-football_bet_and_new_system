@@ -34,7 +34,9 @@
             <% end %>
           </ul>
         </div>
+        <%= link_to(t(".edit_match_btn"), edit_admin_soccer_match_url(soccer_match.id), class: "btn btn-primary ms-3") %>
       </div>
+
       <div class="soccer-match">
         <%= time_handling(soccer_match.time) %>
       </div>

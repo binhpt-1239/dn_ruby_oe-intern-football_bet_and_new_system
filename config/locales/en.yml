@@ -104,6 +104,8 @@ en:
       setting: "  Settings"
       log_out: "  Log out"
       home: " Home"
+    asider_admin:
+      create_soccer_match: "Create soccer match"
   static_pages:
     home:
       football_bet: "Football Bet"
@@ -164,8 +166,8 @@ en:
     unfinished-status: "The match hasn't happened yet"
     soccer_match:
       league: "%{name} League"
-      finish_status: "The match is over"
-      unfinished-status: "The match hasn't happened yet"
+      finished_status: "The match is over"
+      not_happen_status: "The match hasn't happened yet"
       bet_btn: "Bet"
   admin:
     soccer_matches:
@@ -174,6 +176,25 @@ en:
         show_bet_win: "Show user bets win"
         show_bet_win_score: "Show user bets score win"
         set_bet_btn: "Set Bet"
+        edit_match_btn: "Edit Match"
+      new:
+        new_btn: "Create match"
+        title: "Create soccer Matches"
+      edit:
+        edit_btn: "Edit match"
+        title: "Edit soccer match"
+        id: "soccer match ID: %{id}"
+      create:
+        successful_create: "Create match successful"
+        failure_create: "Create match failure"
+      update:
+        successful_update: "Update match successful"
+        failure_update: "Update match failure"
+      form:
+        tournaments: "Tournaments: "
+        home_team: "Home team: "
+        guest_team: "Guest team: "
+        match_time: "Match time: "
       index:
         request_login: "Please login first"
         not_allow: "you do not have permission to access this page"

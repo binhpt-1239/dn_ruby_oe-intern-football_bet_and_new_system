@@ -4,6 +4,9 @@
 <li class="nav-item">
   <%= link_to t("shared.asider_user.home"), admin_root_path, class: "nav-link py-3 px-2 bi-house fs-6" %>
 </li>
+<li class="nav-item">
+  <%= link_to t(".create_soccer_match"), new_admin_soccer_match_url, class: "nav-link py-3 px-2 bi bi-chevron-double-right fs-6" %>
+</li>
 <li>
   <%= link_to t("shared.asider_user.log_out"), logout_path, method: "delete", class: "nav-link py-3 px-2 bi-stop-circle-fill fs-6" %>
 </li>
