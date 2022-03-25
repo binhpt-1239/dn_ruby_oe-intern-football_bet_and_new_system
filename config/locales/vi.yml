@@ -160,6 +160,8 @@ vi:
       update: "Cập nhật"
       delete: "Xóa"
   soccer_matches:
+    finished-status: "Trận đấu đã diễn ra"
+    unfinished-status: "Trận đấu chưa diễn ra"
     soccer_match:
       league: "Giải đấu %{name}"
       finished-status: "Trận đấu đã diễn ra"
@@ -168,10 +170,28 @@ vi:
   admin:
     soccer_matches:
       soccer_match:
+        action: "Hành động"
+        show_bet_win: "Danh sách user thắng cược"
+        show_bet_win_score: "Danh sách user thắng cược tỉ số"
         set_bet_btn: "Tạo kèo đặt cược"
       index:
         request_login: "Vui lòng đăng nhập trước"
         not_allow: "Tài khoản của bạn không có quyền truy cập đến trang này"
+    user_bets:
+      not_found_match: "Không tìm thấy trận đấu"
+      match_not_begin: "Trận đấu chưa bắt đầu"
+      index:
+        title: "Danh sách thắng cược"
+        title_#: "#"
+        title_id: "Id"
+        title_user: "Người dùng"
+        title_amount: "Số dư"
+        title_action: "Hành động"
+        at: "Lúc"
+        empty: "Rỗng"
+      user_bet:
+        intro: " trước"
+        result_money: "Trả tiền"
 
   activerecord:
     models:
