@@ -189,9 +189,17 @@ en:
         title_action: "Action"
         at: "At"
         empty: "Empty"
+        payment_all: "Payment All"
       user_bet:
         intro: " ago"
         result_money: "result money "
+        paymented: "Paymented"
+    payments:
+      not_fond_user_bet: "Not fond user bet"
+      user_bet_handled: "User Bet handled"
+      payment_fails: ": Payment Fails"
+      payment_success: ": Payment Success"
+      not_fond_bet: "Not fond bet"
 
   activerecord:
     models:

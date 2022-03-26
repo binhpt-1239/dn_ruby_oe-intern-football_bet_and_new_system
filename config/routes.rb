@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     resources :currencies, only: %i(new create index)
 
     namespace :admin do
+      post "/payment", to: "payments#create"
+      post "/payment_all", to: "payments#create_all"
       resources :user_bets, only: :index
       resources :bets
       resources :soccer_matches
