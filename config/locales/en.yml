@@ -171,11 +171,14 @@ en:
       bet_btn: "Bet"
   admin:
     soccer_matches:
+      update_status_success: "Update status Success"
+      update_status_fails: "Update status fails"
       soccer_match:
         action: "Action"
         show_bet_win: "Show user bets win"
         show_bet_win_score: "Show user bets score win"
         set_bet_btn: "Set Bet"
+        update_core: "Update core match"
         edit_match_btn: "Edit Match"
       new:
         new_btn: "Create match"
@@ -198,8 +201,16 @@ en:
       index:
         request_login: "Please login first"
         not_allow: "you do not have permission to access this page"
+      show:
+        finish: "Finish"
+      result_goals_team:
+        goals: "Goals"
+    goal_results:
+      create_goal_success: "Create goals success"
+      create_goal_fails: "Create goals fails"
     user_bets:
       not_found_match: "Not found match"
+      not_found_bet: "Not found bet"
       match_not_begin: "Match not begin"
       index:
         title: "User Bet Win"

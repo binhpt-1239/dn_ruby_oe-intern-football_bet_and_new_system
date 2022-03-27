@@ -169,15 +169,16 @@ vi:
       finished_status: "Trận đấu đã diễn ra"
       not_happen_status: "Trận đấu chưa diễn ra"
       bet_btn: "Đặt cược"
-
   admin:
     soccer_matches:
+      update_status_success: "Cập nhật trạng thái thành công"
+      update_status_fails: "Cập nhật trạng thái thất bại"
       soccer_match:
         action: "Hành động"
         show_bet_win: "Danh sách user thắng cược"
         show_bet_win_score: "Danh sách user thắng cược tỉ số"
         set_bet_btn: "Tạo kèo đặt cược"
-        set_bet_btn: "Tạo kèo"
+        update_core: "Cập nhật tỷ số trận đấu"
         edit_match_btn: "Chỉnh sửa"
       new:
         new_btn: "Tạo trận đấu"
@@ -200,8 +201,16 @@ vi:
       index:
         request_login: "Vui lòng đăng nhập trước"
         not_allow: "Tài khoản của bạn không có quyền truy cập đến trang này"
+      show:
+        finish: "Kết thúc"
+      result_goals_team:
+        goals: "Bàn thắng"
+    goal_results:
+      create_goal_success: "Cập nhật bàn thắng thành công"
+      create_goal_fails: "Cập nhật bàn thắng thất bại"
     user_bets:
       not_found_match: "Không tìm thấy trận đấu"
+      not_found_bet: "Không tìm thấy cược"
       match_not_begin: "Trận đấu chưa bắt đầu"
       index:
         title: "Danh sách thắng cược"
