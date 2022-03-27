@@ -32,7 +32,13 @@
             <% else %>
               <li><%= link_to t(".show_bet_win"), admin_user_bets_path(match_id: soccer_match.id), class: "dropdown-item" %></li>
               <li><%= link_to t(".show_bet_win_score"), admin_user_bets_path(match_id: soccer_match.id, score: true), class: "dropdown-item" %></li>
+              <li>
+              <%= link_to t(".show_match_btn"), admin_soccer_match_path(soccer_match.id), class: "dropdown-item" %>
+              </li>
             <% end %>
+            <li>
+              <%= link_to t(".edit_match_btn"), edit_admin_soccer_match_path(soccer_match.id), class: "dropdown-item" %>
+              </li>
           </ul>
         </div>
       </div>

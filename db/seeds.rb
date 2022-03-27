@@ -72,9 +72,8 @@ end
   UserBet.create!(amount: 10, user_id: n+1, bet_id: n+1)
 end
 
-random_id = (1..50).to_a.shuffle
 50.times do |n|
-  player_id = random_id[n]
+  player_id = n
   team_id = n / 10
   team_id = 5 if team_id == 0
   PlayerInfo.create!(player_id: player_id,
@@ -83,5 +82,13 @@ random_id = (1..50).to_a.shuffle
 end
 
 player = Team.first.team_tournaments.first.players.first
-GoalResult.create!(player_id: player.id, time_goal: Time.now, soccer_match_id: 1, team_id: 1)
 SoccerMatch.first.update_columns status: true
+
+GoalResult.create!(player_id: 10, time_goal: 30, soccer_match_id: 1, team_id: 1)
+GoalResult.create!(player_id: 25, time_goal: 59, soccer_match_id: 1, team_id: 2)
+GoalResult.create!(player_id: 13, time_goal: 70, soccer_match_id: 1, team_id: 1)
+
+UserBet.create!(user_id: 3, amount: 500, result_bet: true, bet_id: 1)
+UserBet.create!(user_id: 2, amount: 300, result_bet: false, bet_id: 2)
+UserBet.create!(user_id: 4, amount: 600, result_bet: false, bet_id: 3)
+UserBet.create!(user_id: 5, amount: 100, result_bet: true, bet_id: 1)

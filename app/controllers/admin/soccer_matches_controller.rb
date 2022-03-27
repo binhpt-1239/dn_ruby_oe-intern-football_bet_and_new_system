@@ -1,10 +1,12 @@
 class Admin::SoccerMatchesController < Admin::BaseController
   before_action :load_soccer_match, only: %i(edit update)
-  before_action :load_teams_and_tournament, only: %i(new edit)
+  before_action :load_teams_and_tournaments, only: %i(new edit)
 
   def index
     @pagy, @soccer_matches = pagy SoccerMatch.includes(:home_team, :guest_team)
                                              .newest
+    @win = Currency.search_by_type(:win).sum(:amount)
+    @lose = Currency.search_by_type(:lose).sum(:amount)
   end
 
   def create
@@ -34,6 +36,8 @@ class Admin::SoccerMatchesController < Admin::BaseController
     end
   end
 
+  def show; end
+
   private
 
   def load_soccer_match
@@ -49,7 +53,7 @@ class Admin::SoccerMatchesController < Admin::BaseController
                                          :time, :tournament_id)
   end
 
-  def load_teams_and_tournament
+  def load_teams_and_tournaments
     @teams = Team.all
     @tournaments = Tournament.all
   end
