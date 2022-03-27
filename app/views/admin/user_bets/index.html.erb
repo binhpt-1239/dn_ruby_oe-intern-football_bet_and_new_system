@@ -29,4 +29,7 @@
     </ol>
     <%== pagy_nav @pagy %>
   </div>
+  <div class="row offset-10">
+    <%= button_to t(".payment_all"), admin_payment_all_path(bet_id: @bet.id) unless check_all_result_bet @bet%>
+  </div>
 </div>

@@ -7,7 +7,8 @@ class UserBet < ApplicationRecord
   scope :newest, ->{order created_at: :desc}
 
   delegate :content, to: :bet, prefix: :bet, allow_nil: true
+  delegate :rate, to: :bet, prefix: :bet, allow_nil: true
 
   validates :amount, presence: true,
-          numericality: {greater_than_or_equal_to: 0, only_integer: true}
+          numericality: {greater_than_or_equal_to: 0}
 end

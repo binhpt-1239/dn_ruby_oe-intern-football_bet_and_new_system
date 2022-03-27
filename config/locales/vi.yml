@@ -212,9 +212,17 @@ vi:
         title_action: "Hành động"
         at: "Lúc"
         empty: "Rỗng"
+        payment_all: "Trả tiền hết"
       user_bet:
         intro: " trước"
         result_money: "Trả tiền"
+        paymented: "Đã trả tiền"
+    payments:
+      not_fond_user_bet: "Không tìm thấy cược của người dùng"
+      user_bet_handled: "cược người dùng đã trả tiền"
+      payment_fails: ": Trả tiền không thành công"
+      payment_success: ": Trả tiền thành công"
+      not_fond_bet: "Không tìm thấy cược"
 
   activerecord:
     models:

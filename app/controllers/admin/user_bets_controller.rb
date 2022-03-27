@@ -1,14 +1,15 @@
 class Admin::UserBetsController < Admin::BaseController
   include SoccerMatchHelper
+
   before_action :load_match, :check_status_match, only: :index
 
   def index
-    bet = if params[:score]
-            @match.bets.find_by bet_type: load_result_score(@match)
-          else
-            @match.bets.find_by bet_type: load_result(@match)
-          end
-    user_bets = bet.user_bets.newest
+    @bet = if params[:score]
+             @match.bets.find_by bet_type: load_result_score(@match)
+           else
+             @match.bets.find_by bet_type: load_result(@match)
+           end
+    user_bets = @bet.user_bets.newest
     @pagy, @user_bets = pagy user_bets, items: Settings.digits.digit_6
   end
 
