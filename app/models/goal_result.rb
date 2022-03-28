@@ -11,4 +11,6 @@ class GoalResult < ApplicationRecord
     select(:time_goal)
     .where(soccer_match_id: soccer_match_id)
   end)
+
+  delegate :name, to: :player, prefix: :player, allow_nil: true
 end
