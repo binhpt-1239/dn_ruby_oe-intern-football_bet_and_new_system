@@ -1,5 +1,7 @@
 class Admin::SoccerMatchesController < Admin::BaseController
-  before_action :load_soccer_match, only: %i(edit update)
+  include EventsHelper
+
+  before_action :load_soccer_match, only: %i(edit update show)
   before_action :load_teams_and_tournaments, only: %i(new edit)
 
   def index
@@ -36,7 +38,13 @@ class Admin::SoccerMatchesController < Admin::BaseController
     end
   end
 
-  def show; end
+  def show
+    winners = @soccer_match.user_bets.load_result_bet :win
+    @total_win_amount = total_win_bet winners
+    @total_amount = @soccer_match.user_bets.sum(:amount)
+    @total_lose_amount = @soccer_match.user_bets.load_result_bet(:lose)
+                                      .sum(:amount)
+  end
 
   private
 

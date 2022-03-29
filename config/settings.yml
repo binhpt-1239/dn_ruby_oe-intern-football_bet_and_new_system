@@ -5,6 +5,8 @@ user:
 digits:
   digit_6: 6
   digit_21: 21
+  digit_0: 0
+  digit_1: 1
 format_time: "%H:%M - %m/%d/%Y"
 user_url: https://secure.gravatar.com/avatar/
 user_bets_path: /user_bets

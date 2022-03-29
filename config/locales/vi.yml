@@ -204,7 +204,9 @@ vi:
         not_allow: "Tài khoản của bạn không có quyền truy cập đến trang này"
         total_income: "Tổng thu nhập là: "
       show:
-        finish: "Kết thúc"
+        title_statistic: "Thống kê trận đấu"
+        total_income: "Tổng thu nhập là: "
+        finished: "Đã kết thúc"
       result_goals_team:
         goals: "Bàn thắng"
     goal_results:

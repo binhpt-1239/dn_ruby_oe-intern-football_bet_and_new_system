@@ -44,7 +44,7 @@ end
 end
 
 4.times do |n|
-  Bet.create!(soccer_match_id: n+1, rate: 1, bet_type: 1, content: "Team Home Win")
+  Bet.create!(soccer_match_id: n+1, rate: 0.9, bet_type: 1, content: "Team Home Win")
   Bet.create!(soccer_match_id: n+1, rate: 1.5, bet_type: 2, content: "Tow Team Draw")
   Bet.create!(soccer_match_id: n+1, rate: 1.8, bet_type: 3, content: "Team Guest Win")
   Bet.create!(soccer_match_id: n+1, rate: 4, bet_type: 4, content: "Score: 0-0")
@@ -64,12 +64,6 @@ Currency.create!(amount: 300, user_id: n+1, currency_type_id: 1)
 Currency.create!(amount: 50, user_id: n+1, currency_type_id: 2)
 Currency.create!(amount: 50, user_id: n+1, currency_type_id: 3)
 Currency.create!(amount: 45, user_id: n+1, currency_type_id: 4)
-end
-
-8.times do |n|
-  UserBet.create!(amount: 50, user_id: n+1, bet_id: 1)
-  UserBet.create!(amount: 50, user_id: n+1, bet_id: 6)
-  UserBet.create!(amount: 10, user_id: n+1, bet_id: n+1)
 end
 
 50.times do |n|
