@@ -109,6 +109,7 @@ vi:
       home: " Trang chủ"
     asider_admin:
       create_soccer_match: "Tạo trận đấu"
+      income_statistics: "Thống kê thu nhập"
   static_pages:
     home:
       football_bet: "Cá cược bóng đá"
@@ -213,6 +214,8 @@ vi:
         total_income: "Tổng thu nhập là: "
         finished: "Đã kết thúc"
         finish: "Kết thúc"
+      result_goals_team:
+        goals: "Bàn thắng"
     goal_results:
       create_goal_success: "Cập nhật bàn thắng thành công"
       create_goal_fails: "Cập nhật bàn thắng thất bại"
@@ -251,6 +254,15 @@ vi:
       payment_fails: ": Trả tiền không thành công"
       payment_success: ": Trả tiền thành công"
       not_fond_bet: "Không tìm thấy cược"
+    statistics:
+      index:
+        total_income: "Tổng thu nhập là: "
+        title: "Thống kê thu nhập"
+        not_found: "Không tìm thấy thống kê trong khoảng thời gian này"
+      form_search:
+        from: "Từ"
+        to: "đến"
+        btn_search: "Tìm kiếm"
 
   activerecord:
     models:

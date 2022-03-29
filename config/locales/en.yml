@@ -109,6 +109,7 @@ en:
       home: " Home"
     asider_admin:
       create_soccer_match: "Create soccer match"
+      income_statistics: "Income statistics"
   static_pages:
     home:
       football_bet: "Football Bet"
@@ -213,6 +214,8 @@ en:
         finished: "Finished"
         total_income: "Total income: "
         finish: "Finish"
+      result_goals_team:
+        goals: "Goals"
     goal_results:
       create_goal_success: "Create goals success"
       create_goal_fails: "Create goals fails"
@@ -251,6 +254,15 @@ en:
       payment_fails: ": Payment Fails"
       payment_success: ": Payment Success"
       not_fond_bet: "Not fond bet"
+    statistics:
+      index:
+        total_income: "Total income: "
+        title: "Income statistics"
+        not_found: "Not found statistic for this period"
+      form_search:
+        from: "From"
+        to: "to"
+        btn_search: "Search"
 
   activerecord:
     models:

@@ -1,0 +1,11 @@
+<div class="soccer-match">
+  <%= form_tag admin_statistics_path, method: :get do %>
+<!--    <%= select_date @date, prefix: :statistic_day %>-->
+    <span class="mx-3"><%= t ".from" %></span>
+    <%= date_select(:start_month, :date, default: { month: @start.month }, order: [:month]) %>
+    <span class="mx-3"><%= t ".to" %></span>
+    <%= date_select(:end_month, :date, default: { month: @end.month }, order: [:month]) %>
+    <%= date_select(:years, :date, default: { year: @year }, order: [:year]) %>
+    <%= submit_tag t(".btn_search"), class: "btn btn-primary" %>
+  <% end %>
+</div>

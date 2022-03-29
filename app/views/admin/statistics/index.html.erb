@@ -1,0 +1,20 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<div>
+  <h1 class="text center"><%= t ".title" %></h1>
+  <%if Settings.digits.digit_0 == @total%>
+    <h2 class="text center"><%= t ".not_found" %> </h2>
+    <div class="text-center mt-3"><%= t(".total_income") + (@total - @total_winner).to_s %></div>
+    <%= render "form_search" %>
+  <%else%>
+    <div class="row soccer-match">
+      <canvas id="myChart" class="col" style="width:100%;max-width:600px"></canvas>
+      <div class="col h2">
+        <div class="text-center mb-3"><%= t(".total_income") + (@total - @total_winner).to_s %></div>
+        <%= render "form_search" %>
+      </div>
+    </div>
+  <%end%>
+</div>
+<%= content_tag :div, class: "chart", data: {win: @total_winner, lose: @total_loser} do %>
+<% end %>
+<%= javascript_pack_tag "chart" %>
