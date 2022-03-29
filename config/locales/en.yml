@@ -180,6 +180,7 @@ en:
         set_bet_btn: "Set Bet"
         update_core: "Update core match"
         edit_match_btn: "Edit Match"
+        show_match_btn: "Match statistics"
       new:
         new_btn: "Create match"
         title: "Create soccer Matches"
@@ -201,6 +202,7 @@ en:
       index:
         request_login: "Please login first"
         not_allow: "you do not have permission to access this page"
+        total_income: "total income: "
       show:
         finish: "Finish"
       result_goals_team:
@@ -249,3 +251,7 @@ en:
         amount: "Amount"
       user_bet:
         amount: "Amount:"
+  js:
+    title_chart: "Earning statistics of all matches"
+    win: "Win"
+    lose: "Lose"

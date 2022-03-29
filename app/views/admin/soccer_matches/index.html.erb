@@ -1,2 +1,12 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<div class="row">
+  <canvas id="myChart" class="col" style="width:100%;max-width:600px"></canvas>
+    <%= t(".total_income") + (@win - @lose).to_s %>
+</div>
+
 <ol><%= render @soccer_matches %></ol>
 <%== pagy_nav(@pagy) %>
+
+<%= content_tag :div, class: "chart", data: {win: @win, lose: @lose} do %>
+<% end %>
+<%= javascript_pack_tag "chart" %>

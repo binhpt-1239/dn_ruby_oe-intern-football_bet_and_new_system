@@ -177,9 +177,10 @@ vi:
         action: "Hành động"
         show_bet_win: "Danh sách user thắng cược"
         show_bet_win_score: "Danh sách user thắng cược tỉ số"
-        set_bet_btn: "Tạo kèo đặt cược"
         update_core: "Cập nhật tỷ số trận đấu"
+        set_bet_btn: "Tạo kèo"
         edit_match_btn: "Chỉnh sửa"
+        show_match_btn: "Thông kê trận đấu"
       new:
         new_btn: "Tạo trận đấu"
         title: "Tạo trận đấu"
@@ -201,6 +202,7 @@ vi:
       index:
         request_login: "Vui lòng đăng nhập trước"
         not_allow: "Tài khoản của bạn không có quyền truy cập đến trang này"
+        total_income: "Tổng thu nhập là: "
       show:
         finish: "Kết thúc"
       result_goals_team:
@@ -249,3 +251,7 @@ vi:
         amount: "Số tiền"
       user_bet:
         amount: "Số tiền"
+  js:
+    title_chart: "Thống kê thu nhập của tất cả trận đấu"
+    win: "Thắng cược"
+    lose: "Thua cược"
