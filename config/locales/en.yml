@@ -202,9 +202,11 @@ en:
       index:
         request_login: "Please login first"
         not_allow: "you do not have permission to access this page"
-        total_income: "total income: "
+        total_income: "Total income: "
       show:
-        finish: "Finish"
+        title_statistic: "Match statistics"
+        finished: "Finished"
+        total_income: "Total income: "
       result_goals_team:
         goals: "Goals"
     goal_results:

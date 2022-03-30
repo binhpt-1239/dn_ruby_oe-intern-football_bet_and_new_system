@@ -5,6 +5,7 @@ class SoccerMatch < ApplicationRecord
 
   has_many :bets, dependent: :destroy
   has_many :goal_results, dependent: :destroy
+  has_many :user_bets, through: :bets
 
   delegate :name, to: :home_team, prefix: :home, allow_nil: true
   delegate :name, to: :guest_team, prefix: :guest, allow_nil: true

@@ -1,0 +1,42 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<div class="mb-5 soccer-match h2">
+  <%= t ".title_statistic" %>
+</div>
+<div class="row soccer-match ">
+  <div class="col h3 row soccer-match">
+    <div class="col">
+      <%= image_tag("/assets/football-logo/#{@soccer_match.home_name}.png",size: "150x150") %>
+    </div>
+    <div class="col">
+      <%= @soccer_match.home_name %>
+    </div>
+  </div>
+  <div class="col row soccer-match">
+    <div class="col h1 soccer-match">
+      <%= calculate_score(@soccer_match.home_id, @soccer_match.id) %>
+        -
+      <%= calculate_score(@soccer_match.guest_id, @soccer_match.id) %>
+    </div>
+    <div class="row soccer-match text-center pt-1">
+      <span class="text-danger"><%= t".finished" %></span>
+    </div>
+  </div>
+  <div class="col h3 row soccer-match">
+    <div class="col">
+      <%= @soccer_match.guest_name %>
+    </div>
+    <div class="col">
+      <%= image_tag("/assets/football-logo/#{@soccer_match.guest_name}.png",size: "150x150") %>
+    </div>
+  </div>
+</div>
+
+<div class="row soccer-match mt-5">
+  <canvas id="myChart" class="col" style="width:100%;max-width:600px"></canvas>
+  <div class="col h2">
+    <%= t(".total_income") + (@total_amount - @total_win_amount).to_s %>
+  </div>
+</div>
+<%= content_tag :div, class: "chart", data: {win: @total_win_amount, lose: @total_lose_amount} do %>
+<% end %>
+<%= javascript_pack_tag "chart" %>
