@@ -79,6 +79,9 @@ vi:
       withdrawal: "Rút tiền "
       winning_bonus: "Thắng cược"
       loss_money: "Đặt cược"
+    create:
+      success: "Thành công"
+      fails: "Thất bại"
   layouts:
     footer:
       football_bet: "Cá cược bóng đá"
@@ -171,8 +174,10 @@ vi:
       bet_btn: "Đặt cược"
   admin:
     soccer_matches:
+      match_finished: "Trận đấu đã kết thúc"
       update_status_success: "Cập nhật trạng thái thành công"
       update_status_fails: "Cập nhật trạng thái thất bại"
+      team_not_found: "Không tìm thấy đội bóng"
       soccer_match:
         action: "Hành động"
         show_bet_win: "Danh sách user thắng cược"
@@ -207,11 +212,21 @@ vi:
         title_statistic: "Thống kê trận đấu"
         total_income: "Tổng thu nhập là: "
         finished: "Đã kết thúc"
-      result_goals_team:
-        goals: "Bàn thắng"
+        finish: "Kết thúc"
     goal_results:
       create_goal_success: "Cập nhật bàn thắng thành công"
       create_goal_fails: "Cập nhật bàn thắng thất bại"
+      match_finished: "Trận đấu đã kết thúc"
+      match_not_found: "Không tìm thấy trận đấu"
+      player_not_found: "Không tìm thấy cầu thủ"
+      team_not_found: "Không tìm thấy đội bóng"
+      new:
+        finish: "Tạo"
+        add_score: "Thêm bàn thắng"
+      result_goals_team:
+        goals: "Bàn thắng"
+      goal_result_fields:
+        remove: "Loại bỏ"
     user_bets:
       not_found_match: "Không tìm thấy trận đấu"
       not_found_bet: "Không tìm thấy cược"

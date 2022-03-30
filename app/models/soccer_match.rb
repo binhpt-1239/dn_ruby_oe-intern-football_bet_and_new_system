@@ -11,5 +11,7 @@ class SoccerMatch < ApplicationRecord
   delegate :name, to: :guest_team, prefix: :guest, allow_nil: true
   delegate :name, to: :tournament, prefix: :tournament, allow_nil: true
 
-  scope :newest, ->{order(time: :asc)}
+  accepts_nested_attributes_for :goal_results, allow_destroy: true
+
+  scope :newest, ->{order :time}
 end

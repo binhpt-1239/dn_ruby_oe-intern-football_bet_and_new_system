@@ -79,6 +79,9 @@ en:
       withdrawal: "Withdrawal "
       winning_bonus: "Winning Bonus"
       loss_money: "Loss money"
+    create:
+      success: "Success"
+      fails: "Fails"
   layouts:
     footer:
       football_bet: "Football Bet"
@@ -171,8 +174,10 @@ en:
       bet_btn: "Bet"
   admin:
     soccer_matches:
+      match_finished: "Match finished"
       update_status_success: "Update status Success"
       update_status_fails: "Update status fails"
+      team_not_found: "Team not found"
       soccer_match:
         action: "Action"
         show_bet_win: "Show user bets win"
@@ -207,11 +212,21 @@ en:
         title_statistic: "Match statistics"
         finished: "Finished"
         total_income: "Total income: "
-      result_goals_team:
-        goals: "Goals"
+        finish: "Finish"
     goal_results:
       create_goal_success: "Create goals success"
       create_goal_fails: "Create goals fails"
+      match_finished: "Match finished"
+      match_not_found: "Match not found"
+      player_not_found: "Player not found"
+      team_not_found: "Team not found"
+      new:
+        finish: "Finish"
+        add_score: "Add score"
+      result_goals_team:
+        goals: "Goals"
+      goal_result_fields:
+        remove: "Remove"
     user_bets:
       not_found_match: "Not found match"
       not_found_bet: "Not found bet"
