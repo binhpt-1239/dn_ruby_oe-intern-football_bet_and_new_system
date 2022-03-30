@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     namespace :admin do
       post "/payment", to: "payments#create"
       post "/payment_all", to: "payments#create_all"
+      resources :goal_results, only: %i(create new)
       resources :user_bets, only: :index
       resources :bets
       resources :soccer_matches

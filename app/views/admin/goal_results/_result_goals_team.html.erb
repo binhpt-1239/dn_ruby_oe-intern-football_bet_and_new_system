@@ -1,0 +1,4 @@
+<div class="fs-5 text-danger"><%= t ".goals" %></div>
+<% list_goals_team.each do |player| %>
+  <%= player.player_name %>&nbsp;-&nbsp;<%= player.time_goal %>'</br>
+<% end %>

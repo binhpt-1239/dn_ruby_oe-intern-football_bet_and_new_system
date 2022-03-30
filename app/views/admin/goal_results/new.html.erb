@@ -1,0 +1,29 @@
+<% provide :title, "#{@soccer_match.home_name} - #{@soccer_match.guest_name}" %>
+<%= render "admin/soccer_matches/soccer_match", soccer_match: @soccer_match %>
+<li class="list-unstyled mt-4 border">
+  <%= form_for @soccer_match, url: admin_goal_results_path(match_id: @soccer_match.id),
+      method: :post do |soccer| %>
+    <%= soccer.hidden_field :status, value: 1 %>
+    <div class="row mt-3 mb-3 text-center">
+      <div class="col-sm-5 nested-fields-1">
+        <%= render "goal_result_fields", soccer: soccer, team: @team_home, index: "home"  %>
+      </div>
+
+      <div class="col-sm-2 text-center">
+        <%= soccer.submit t(".finish") %>
+      </div>
+
+      <div class="col-sm-5 nested-fields-2">
+        <%= render "goal_result_fields", soccer: soccer, team: @team_guest, index: "guest"  %>
+      </div>
+    </div>
+  <% end %>
+  <div class="row mt-3 mb-3">
+    <div class="col text-center">
+      <%= render "result_goals_team", list_goals_team: @goals_home_team %>
+    </div>
+    <div class="col text-center">
+      <%= render "result_goals_team", list_goals_team: @goals_guest_team %>
+    </div>
+  </div>
+</li>
