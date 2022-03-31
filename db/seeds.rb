@@ -43,7 +43,7 @@ end
                       home_id: 1, guest_id: n+2)
 end
 
-4.times do |n|
+1.times do |n|
   Bet.create!(soccer_match_id: n+1, rate: 0.9, bet_type: 1, content: "Team Home Win")
   Bet.create!(soccer_match_id: n+1, rate: 1.5, bet_type: 2, content: "Tow Team Draw")
   Bet.create!(soccer_match_id: n+1, rate: 1.8, bet_type: 3, content: "Team Guest Win")

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       resources :goal_results, only: %i(create new)
       resources :user_bets, only: :index
       resources :bets
+      post "/update_bets", to: "bets#update_bets"
       resources :soccer_matches
       resources :statistics, only: :index
       root to: "soccer_matches#index"

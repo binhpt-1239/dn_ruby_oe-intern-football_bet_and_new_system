@@ -1,0 +1,16 @@
+<% provide :title, t(".new_bet") %>
+<%= render "admin/soccer_matches/soccer_match", soccer_match: @soccer_match %>
+<li class="list-unstyled mt-2 border row">
+  <div class="text-center mt-2 text-warning"><h4><%= t ".update_bet_match" %></h4></div>
+  <%= form_for @soccer_match, url: admin_update_bets_path(match_id: @soccer_match.id),
+      method: :post do |f| %>
+    <div class="row offset-md-2 mt-3">
+      <div class="col-md-4 text-primary"><%= t ".content" %></div>
+      <div class="col-md-2 text-primary"><%= t ".rate" %></div>
+      <div class="col-md-2 text-primary"><%= t ".type" %></div>
+      <div class="col-md-2"></div>
+      <div class="col-md-2"><%= f.submit t(".create"), locals: {match_id: @soccer_match.id} %></div>
+    </div>
+    <%= render "bet_fields", f: f  %>
+  <% end %>
+</li>

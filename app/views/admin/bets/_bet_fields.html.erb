@@ -1,0 +1,10 @@
+<div class="nested-fields" id="bets">
+  <%= f.fields_for :bets do |ff| %>
+    <div class="row offset-md-2">
+      <%= ff.hidden_field :id %>
+      <div class="col-md-4"><%= ff.text_field :content, class: "form-control" %></div>
+      <%= ff.number_field :rate, in: 0..50, step: 0.1, class: "col-md-2 btn" %>
+      <%= ff.text_field :bet_type, disabled: true, class: "col-md-2 btn" %>
+    </div>
+  <% end %>
+</div>

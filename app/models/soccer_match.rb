@@ -12,6 +12,7 @@ class SoccerMatch < ApplicationRecord
   delegate :name, to: :tournament, prefix: :tournament, allow_nil: true
 
   accepts_nested_attributes_for :goal_results, allow_destroy: true
+  accepts_nested_attributes_for :bets, allow_destroy: true
 
   scope :newest, ->{order :time}
 end

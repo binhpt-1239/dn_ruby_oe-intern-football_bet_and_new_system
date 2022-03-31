@@ -27,7 +27,7 @@
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <% unless soccer_match.status %>
-              <li><%= link_to t(".set_bet_btn"),"#", class: "dropdown-item" %></li>
+              <li><%= link_to t(".set_bet_btn"), admin_bets_path(match_id: soccer_match.id), method: :post, class: "dropdown-item" %></li>
               <li><%= link_to t(".edit_match_btn"), edit_admin_soccer_match_path(soccer_match.id), class: "dropdown-item" %></li>
               <li><%= link_to t(".update_core"), new_admin_goal_result_path(match_id: soccer_match.id), class: "dropdown-item" %></li>
             <% else %>

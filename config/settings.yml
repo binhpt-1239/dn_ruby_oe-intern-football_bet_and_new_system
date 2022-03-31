@@ -14,3 +14,4 @@ user_url: https://secure.gravatar.com/avatar/
 user_bets_path: /user_bets
 sql:
   sql_find_period: "updated_at BETWEEN ? AND ?"
+arr_content_bets: ["Team Home Win", "Tow Team Draw", "Team Guest Win", "Score: 0-0", "Score: 0-1", "Score: 1-0", "Score: 1-1", "Score other"]

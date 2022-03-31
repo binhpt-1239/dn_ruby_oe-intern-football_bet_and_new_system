@@ -174,6 +174,19 @@ en:
       not_happen_status: "The match hasn't happened yet"
       bet_btn: "Bet"
   admin:
+    bets:
+      success: "Create success"
+      fails: "Create fails"
+      match_not_found: "Match not found"
+      bets_default: "Bets default created"
+      match_finished: "Match finished"
+      create:
+        new_bet: "new bet"
+        update_bet_match: "Update Soccer Match Bets"
+        content: "Content"
+        rate: "Rate"
+        type: "Type"
+        create: "Create"
     soccer_matches:
       match_finished: "Match finished"
       update_status_success: "Update status Success"
