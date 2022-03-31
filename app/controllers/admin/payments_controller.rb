@@ -47,7 +47,7 @@ class Admin::PaymentsController < Admin::BaseController
 
   def payment_user_bet user_bet
     user = user_bet.user
-    user_bet.result_bet = true
+    user_bet.result_bet = :win
     user.currencies.new(amount: load_money_win(user_bet).to_i,
                       currency_type_id: :win)
     begin
