@@ -1,7 +1,7 @@
 class Admin::GoalResultsController < Admin::BaseController
   skip_before_action :verify_authenticity_token
-  before_action :load_match, only: %i(create new)
-  before_action :check_team, only: :new
+  before_action :load_match, only: %i(create new new_fields)
+  before_action :check_team, only: %i(new new_fields)
   before_action :check_status_match, only: :create
 
   def new
@@ -12,7 +12,24 @@ class Admin::GoalResultsController < Admin::BaseController
     @soccer_match.goal_results.build
   end
 
+  def new_fields
+    @goals_home_team = @soccer_match.goal_results.score @team_home.id,
+                                                        @soccer_match.id
+    @goals_guest_team = @soccer_match.goal_results.score @team_guest.id,
+                                                         @soccer_match.id
+
+    @soccer_match.goal_results.create!
+
+    @item = params[:item].to_i
+
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def create
+    byebug
     if @soccer_match.update goal_result_params
       flash[:success] = t ".create_goal_success"
     else

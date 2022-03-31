@@ -1,0 +1,5 @@
+'<%= form_for @soccer_match, url: admin_goal_results_path(match_id: @soccer_match.id),\
+      method: :post, html: {multipart: true} do |soccer| %>'
+  $('.nested-fields-1').append(`<%= j render "goal_result_fields",
+    soccer: soccer, team: @team_home, index: "home", item: @item %>`)
+'<% end %>'

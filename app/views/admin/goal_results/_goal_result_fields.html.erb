@@ -1,12 +1,16 @@
-<div class="nested-fields row" id="goal_results">
+<div class="nested-fields row goal_add_item" id="goal_results">
   <%= soccer.fields_for :goal_results do |f| %>
-    <div class="col-md-5 btn"><%= f.collection_select :player_id, team.team_tournaments.first.players, :id, :name %></div>
+    <div class="col-md-5 btn">
+      <%= f.select :player_id, options_for_select(team.team_tournaments.first.players.pluck(:name, :id)), {},
+        {name: "soccer_match[goal_results_attributes][#{item}][player_id]",
+        class: "form-control"} %>
+    </div>
     <div class="col-md-1"></div>
-    <%= f.number_field :time_goal, in: 0..120, step: 1, class: "col-md-2 btn" %>
-    <%= f.hidden_field :team_id, value: team.id %>
+    <%= f.number_field :time_goal, in: 0..120, step: 1,
+      class: "col-md-2 btn", id: "soccer_match[goal_results_attributes][#{item}][time_goal]", name: "soccer_match[goal_results_attributes][#{item}][time_goal]" %>
+    <%= f.hidden_field :team_id, value: team.id, name: "soccer_match[goal_results_attributes][#{item}][team_id]" %>
     <div class="col-md-3">
       <%= button_to t(".remove"), "#", class: "remove-#{index}" %>
     </div>
   <% end %>
 </div>
-<%= javascript_pack_tag "remove_fields" %>
