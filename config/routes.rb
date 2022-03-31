@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       resources :user_bets, only: :index
       resources :bets
       resources :soccer_matches
+      resources :statistics, only: :index
       root to: "soccer_matches#index"
     end
 
