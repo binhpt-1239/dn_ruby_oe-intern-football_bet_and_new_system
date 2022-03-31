@@ -31,9 +31,11 @@ class Admin::StatisticsController < Admin::BaseController
   end
 
   def load_total user_bets
-    winners = user_bets.load_result_bet :win
+    winners = user_bets.load_result_bet true
     @total_winner = total_win_bet winners
-    @total_loser = user_bets.load_result_bet(:lose).sum(:amount)
+    @total_winner_has_rate = @total_winner - user_bets.load_result_bet(true)
+                                                      .sum(:amount)
+    @total_loser = user_bets.load_result_bet(false).sum(:amount)
     @total = user_bets.sum(:amount)
   end
 end

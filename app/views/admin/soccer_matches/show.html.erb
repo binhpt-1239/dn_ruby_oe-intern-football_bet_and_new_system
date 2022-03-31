@@ -37,6 +37,6 @@
     <%= t(".total_income") + (@total_amount - @total_win_amount).to_s %>
   </div>
 </div>
-<%= content_tag :div, class: "chart", data: {win: @total_win_amount, lose: @total_lose_amount} do %>
+<%= content_tag :div, class: "chart", data: {win: @total_winner_has_rate, lose: @total_lose_amount} do %>
 <% end %>
 <%= javascript_pack_tag "chart" %>

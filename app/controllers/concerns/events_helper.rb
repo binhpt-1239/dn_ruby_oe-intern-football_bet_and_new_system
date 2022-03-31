@@ -1,4 +1,6 @@
 module EventsHelper
+  include UserBetsHelper
+
   def load_money_win user_bet
     user_bet.amount * (user_bet.bet_rate + Settings.digits.digit_1)
   end

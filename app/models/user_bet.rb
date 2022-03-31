@@ -4,8 +4,6 @@ class UserBet < ApplicationRecord
 
   has_many :teams, dependent: :nullify
 
-  enum result_bet: {lose: 0, win: 1}
-
   scope :newest, ->{order created_at: :desc}
   scope :load_result_bet, ->(result){where result_bet: result}
 
