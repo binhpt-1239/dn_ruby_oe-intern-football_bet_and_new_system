@@ -39,10 +39,12 @@ class Admin::SoccerMatchesController < Admin::BaseController
   end
 
   def show
-    winners = @soccer_match.user_bets.load_result_bet :win
+    winners = @soccer_match.user_bets.load_result_bet true
+    total_user_win = @soccer_match.user_bets.load_result_bet(true).sum(:amount)
     @total_win_amount = total_win_bet winners
     @total_amount = @soccer_match.user_bets.sum(:amount)
-    @total_lose_amount = @soccer_match.user_bets.load_result_bet(:lose)
+    @total_winner_has_rate = @total_win_amount - total_user_win
+    @total_lose_amount = @soccer_match.user_bets.load_result_bet(false)
                                       .sum(:amount)
   end
 

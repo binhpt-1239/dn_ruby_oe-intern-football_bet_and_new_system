@@ -1,6 +1,8 @@
 class CurrenciesController < ApplicationController
+  include EventsHelper
+
   before_action :logged_in_user, only: %i(index new create)
-  before_action :check_type, only: :create
+  before_action :check_type, :check_amount_bet, only: :create
 
   def index
     moneys = current_user.currencies.search_by_type(params[:type]).newest
@@ -34,6 +36,15 @@ class CurrenciesController < ApplicationController
 
   def action_if_type_current_not_found
     flash[:warning] = t ".fails"
+    redirect_to currencies_path
+  end
+
+  def check_amount_bet
+    return if params[:currency][:currency_type_id] != "withdrawal"
+
+    return if money_bet_valid? current_user, params[:currency][:amount]
+
+    flash[:warning] = t ".amount_invalid"
     redirect_to currencies_path
   end
 end

@@ -28,6 +28,9 @@ en:
         success: "Create Success"
         fails: "Create Fails"
 
+  base:
+    request_login: "Please login first"
+    not_allow: "you do not have permission to access this page"
   bets:
     index:
       list_bet: "List Bets"
@@ -49,6 +52,7 @@ en:
     bet:
       bet: "Bet"
   currencies:
+    amount_invalid: "Money Withdrawal not greater than total current money"
     currency:
       add_money: "Add money "
       take_money: "Take money"

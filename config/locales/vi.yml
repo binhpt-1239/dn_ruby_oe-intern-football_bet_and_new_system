@@ -28,6 +28,9 @@ vi:
         success: "Tạo thành công"
         fails: "Tạo thất bại"
 
+  base:
+    request_login: "Vui lòng đăng nhập trước"
+    not_allow: "Tài khoản của bạn không có quyền truy cập đến trang này"
   bets:
     index:
       list_bet: "Danh sách kèo cược"
@@ -49,6 +52,7 @@ vi:
     bet:
       bet: "Cược"
   currencies:
+    amount_invalid: "Tiền rút không được lớn hơn số dư hiện tại"
     currency:
       add_money: "Nạp tiền"
       take_money: "Rút tiền"

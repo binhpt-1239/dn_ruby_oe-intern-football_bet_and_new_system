@@ -15,6 +15,6 @@
     </div>
   <%end%>
 </div>
-<%= content_tag :div, class: "chart", data: {win: @total_winner, lose: @total_loser} do %>
+<%= content_tag :div, class: "chart", data: {win: @total_winner_has_rate, lose: @total_loser} do %>
 <% end %>
 <%= javascript_pack_tag "chart" %>

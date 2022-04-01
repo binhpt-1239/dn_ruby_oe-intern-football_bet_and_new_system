@@ -82,7 +82,10 @@ GoalResult.create!(player_id: 10, time_goal: 30, soccer_match_id: 1, team_id: 1)
 GoalResult.create!(player_id: 25, time_goal: 59, soccer_match_id: 1, team_id: 2)
 GoalResult.create!(player_id: 13, time_goal: 70, soccer_match_id: 1, team_id: 1)
 
-UserBet.create!(user_id: 3, amount: 500, result_bet: :win, bet_id: 1)
-UserBet.create!(user_id: 2, amount: 300, result_bet: :lose, bet_id: 2)
-UserBet.create!(user_id: 4, amount: 600, result_bet: :lose, bet_id: 3)
-UserBet.create!(user_id: 5, amount: 100, result_bet: :win, bet_id: 1)
+UserBet.create!(user_id: 3, amount: 500, result_bet: 0, bet_id: 1)
+UserBet.create!(user_id: 2, amount: 300, result_bet: 0, bet_id: 2)
+UserBet.create!(user_id: 4, amount: 600, result_bet: 0, bet_id: 3)
+UserBet.create!(user_id: 5, amount: 100, result_bet: 0, bet_id: 1)
+10.times do |n|
+  UserBet.create!(user_id: n+1, amount: 50, result_bet: 0, bet_id: 1)
+end
