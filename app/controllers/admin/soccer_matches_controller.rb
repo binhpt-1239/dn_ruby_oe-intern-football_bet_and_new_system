@@ -34,6 +34,7 @@ class Admin::SoccerMatchesController < Admin::BaseController
       redirect_to admin_root_path
     else
       flash.now[:danger] = t ".failure_update"
+      load_teams_and_tournaments
       render :edit
     end
   end

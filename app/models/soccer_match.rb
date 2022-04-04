@@ -15,4 +15,14 @@ class SoccerMatch < ApplicationRecord
   accepts_nested_attributes_for :bets, allow_destroy: true
 
   scope :newest, ->{order :time}
+
+  validate :valid_match_time?
+
+  private
+
+  def valid_match_time?
+    return if time >= Time.zone.today
+
+    errors.add(:time, :invalid_match_time)
+  end
 end

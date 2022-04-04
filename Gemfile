@@ -31,18 +31,16 @@ end
 
 group :test do
   gem "capybara", ">= 2.15"
+  gem "factory_bot_rails"
+  gem "rubocop", "~> 0.74.0", require: false
+  gem "rubocop-checkstyle_formatter", require: false
+  gem "rubocop-rails", "~> 2.3.2", require: false
+  gem "rspec-rails", "~> 4.0.1"
+  gem "rails-controller-testing"
   gem "selenium-webdriver"
+  gem "simplecov"
+  gem "simplecov-rcov"
   gem "webdrivers"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-group :development, :test do
-  gem "rubocop", "~> 0.74.0", require: false
-  gem "rubocop-checkstyle_formatter", require: false
-  gem "rubocop-rails", "~> 2.3.2", require: false
-end
-
-group :development, :test do
-  gem "rspec-rails", "~> 4.0.1"
-end
