@@ -297,6 +297,10 @@ en:
         amount: "Amount"
       user_bet:
         amount: "Amount:"
+    errors:
+      models:
+        user:
+          invalid_match_time: "Match time must be greater than now"
   js:
     title_chart: "Earning statistics of all matches"
     win: "Win"

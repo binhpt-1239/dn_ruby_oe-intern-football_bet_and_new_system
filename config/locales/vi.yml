@@ -297,6 +297,10 @@ vi:
         amount: "Số tiền"
       user_bet:
         amount: "Số tiền"
+    errors:
+      models:
+        user:
+          invalid_match_time: "Thời gian diễn ra trận đấu không được trước thời gian hiện tại"
   js:
     title_chart: "Thống kê thu nhập của tất cả trận đấu"
     win: "Thắng cược"
