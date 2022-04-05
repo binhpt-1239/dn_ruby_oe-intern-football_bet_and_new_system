@@ -60,7 +60,12 @@ config/environments/*.local.yml
 # Ignore application configuration
 /config/application.yml
 
+#spec
+/spec/helpers/*.rb
+/spec/requests/*.rb
+/spec/views/*
+
 /.vscode
 
-#coverage
+#
 /coverage
