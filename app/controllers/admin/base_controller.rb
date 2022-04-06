@@ -6,14 +6,14 @@ class Admin::BaseController < ApplicationController
   def loged_in?
     return if current_user
 
-    flash[:danger] = t ".request_login"
+    flash[:danger] = t "base.request_login"
     redirect_to root_path
   end
 
   def is_admin?
     return if current_user.admin
 
-    flash[:danger] = t ".not_allow"
+    flash[:danger] = t "base.not_allow"
     redirect_to root_path
   end
 end
