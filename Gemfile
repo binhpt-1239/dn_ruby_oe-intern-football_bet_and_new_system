@@ -38,6 +38,7 @@ group :test do
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.3.2", require: false
   gem "selenium-webdriver"
+  gem "shoulda-matchers", "~> 5.0"
   gem "simplecov"
   gem "simplecov-rcov"
   gem "webdrivers"
