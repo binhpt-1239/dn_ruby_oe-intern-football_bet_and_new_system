@@ -149,6 +149,7 @@ vi:
   user_bets:
     new:
       bet: "Cược"
+      not_found_bet: "Không tìm thấy kèo"
     create:
       fails: "Bạn đặt cược thất bại"
       success: "Bạn đặt cược thành công"

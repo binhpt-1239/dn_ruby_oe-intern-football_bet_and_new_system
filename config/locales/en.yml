@@ -149,6 +149,7 @@ en:
   user_bets:
     new:
       bet: "Bet"
+      not_found_bet: "Bet not found"
     create:
       fails: "Create Your Bet Fails"
       success: "Create Your Bet Success"
