@@ -2,8 +2,6 @@ class UserBet < ApplicationRecord
   belongs_to :user
   belongs_to :bet
 
-  has_many :teams, dependent: :nullify
-
   scope :newest, ->{order created_at: :desc}
   scope :load_result_bet, ->(result){where result_bet: result}
 
@@ -19,10 +17,8 @@ class UserBet < ApplicationRecord
           numericality: {greater_than_or_equal_to: 0}
 
   def self.search start_month, end_month
-    if start_month && end_month
-      UserBet.load_by_date start_month, end_month
-    else
-      UserBet.load_by_today
-    end
+    return unless start_month && end_month
+
+    UserBet.load_by_date start_month, end_month
   end
 end

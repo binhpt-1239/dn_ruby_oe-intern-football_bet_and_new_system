@@ -14,10 +14,10 @@ class Admin::SoccerMatchesController < Admin::BaseController
   def create
     @soccer_match = SoccerMatch.new match_params
     if @soccer_match.save
-      flash[:info] = t ".successful_create"
+      flash[:success] = t ".successful_create"
       redirect_to new_admin_soccer_match_path
     else
-      flash[:danger] = t ".failure_create"
+      flash.now[:danger] = t ".failure_create"
       render :new
     end
   end

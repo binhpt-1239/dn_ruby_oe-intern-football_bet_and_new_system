@@ -197,6 +197,7 @@ en:
       update_status_success: "Update status Success"
       update_status_fails: "Update status fails"
       team_not_found: "Team not found"
+      not_found_match: "Không tìm thấy trận đấu"
       soccer_match:
         action: "Action"
         show_bet_win: "Show user bets win"
