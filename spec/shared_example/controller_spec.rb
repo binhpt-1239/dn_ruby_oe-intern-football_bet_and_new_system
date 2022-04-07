@@ -12,6 +12,25 @@ RSpec.shared_examples "when not logged in admin" do
   it_behaves_like "redirect to path", "root_path"
 end
 
+
+RSpec.shared_examples "when admin not logged in" do |action|
+  before {get action}
+
+  it_behaves_like "flash danger message", "base.request_login"
+  it_behaves_like "redirect to path", "root_path"
+end
+
+RSpec.shared_examples "when logged in but not admin" do |action|
+  let!(:client_user) { create(:client_user)}
+  before do
+    log_in client_user
+    get action
+  end
+
+  it_behaves_like "flash danger message", "base.not_allow"
+  it_behaves_like "redirect to path", "root_path"
+end
+
 RSpec.shared_examples "render action template" do |action|
   it "render #{action} template" do
     expect(response).to render_template action
