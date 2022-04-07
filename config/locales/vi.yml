@@ -197,6 +197,7 @@ vi:
       update_status_success: "Cập nhật trạng thái thành công"
       update_status_fails: "Cập nhật trạng thái thất bại"
       team_not_found: "Không tìm thấy đội bóng"
+      not_found_match: "Không tìm thấy trận đấu"
       soccer_match:
         action: "Hành động"
         show_bet_win: "Danh sách user thắng cược"
