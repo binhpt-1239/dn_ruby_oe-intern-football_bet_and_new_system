@@ -114,6 +114,7 @@ en:
     asider_admin:
       create_soccer_match: "Create soccer match"
       income_statistics: "Income statistics"
+      setting: "  Settings"
   static_pages:
     home:
       football_bet: "Football Bet"
@@ -297,6 +298,27 @@ en:
         not_receive_confir: "Didn't receive confirmation instructions?"
         not_receive_unlock: "Didn't receive unlock instructions?"
         sign_in_with: "Sign in with"
+    registrations:
+      new:
+        sign_up: "Sign up"
+        minimum_characters: "characters minimum"
+      edit:
+        cancer_acount: "Cancel my account"
+        unhappy: "Unhappy"
+        edit: "Edit"
+        back: "Back"
+        minimum_characters: "characters minimum"
+        intro1: "Currently waiting confirmation for:"
+        intro2: "(leave blank if you don't want to change it)"
+        intro3: "(we need your current password to confirm your changes)"
+    passwords:
+      new:
+        forgot_password: "Forgot your password?"
+        send_reset_password: "Send me reset password instructions"
+      edit:
+        change_password: "Change your password"
+        change_my_password: "Change my password"
+        minimum_characters: "characters minimum"
 
   activerecord:
     models:
@@ -309,7 +331,8 @@ en:
         email: "Email"
         password: "Password"
         remember_me: "Remember me?"
-        confirmation: "Password Confirmation"
+        current_password: "Current password"
+        password_confirmation: "Password Confirmation"
         submit: "Submit"
       currency:
         amount: "Amount"

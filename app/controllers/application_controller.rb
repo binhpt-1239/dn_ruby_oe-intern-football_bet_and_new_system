@@ -2,12 +2,22 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include Pagy::Backend
 
+  before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
+
+  protected
+
+  def configure_permitted_parameters
+    added_attrs = [:name, :email, :password,
+                   :password_confirmation, :remember_me]
+    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
+  end
 
   private
 
   def logged_in_user
-    action_if_not_logged_in unless logged_in?
+    action_if_not_logged_in unless user_signed_in?
   end
 
   def action_if_not_logged_in
