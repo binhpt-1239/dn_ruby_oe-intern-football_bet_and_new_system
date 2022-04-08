@@ -1,11 +1,13 @@
 class User < ApplicationRecord
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
   has_many :currencies, dependent: :nullify
   has_many :user_bets, dependent: :destroy
   has_many :bets, through: :user_bets, dependent: :destroy
   has_many :newses, dependent: :nullify
   has_many :comments, dependent: :destroy
 
-  attr_accessor :remember_token
+  attr_accessor :remember_me
   before_save :downcase_email
 
   validates :name, presence: true
@@ -32,14 +34,14 @@ class User < ApplicationRecord
   end
 
   def remember
-    self.remember_token = User.new_token
-    update_column :remember_digest, User.digest(remember_token)
+    self.remember_me = User.new_token
+    update_column :remember_digest, User.digest(remember_me)
   end
 
-  def authenticated? remember_token
+  def authenticated? remember_me
     return false unless remember_digest
 
-    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+    BCrypt::Password.new(remember_digest).is_password?(remember_me)
   end
 
   def forget

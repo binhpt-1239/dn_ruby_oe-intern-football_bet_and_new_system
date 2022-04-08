@@ -20,9 +20,9 @@
           <li class="nav-item">
             <%= link_to t(".contact"), "#", class: "text-primary nav-link" %>
           </li>
-          <% unless logged_in? %>
+          <% unless user_signed_in? %>
             <li class="nav-item nav-link">
-              <%= link_to t(".log_in"), login_path, class: "text-primary" %>
+              <%= link_to t(".log_in"), new_user_session_path, class: "text-primary" %>
             </li>
           <% end %>
         </ul>

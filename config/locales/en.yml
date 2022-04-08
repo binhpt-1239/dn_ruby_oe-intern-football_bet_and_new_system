@@ -282,6 +282,21 @@ en:
         from: "From"
         to: "to"
         btn_search: "Search"
+  devise:
+    sessions:
+      new:
+        remember_me: "Remember me on this computer"
+        log_in: "Log In"
+        new_user: "New user?"
+        intr_signup: "Sign up now!"
+    shared:
+      links:
+        log_in: "Log In"
+        sign_up: "Sign up"
+        forgot_your_password: "Forgot your password?"
+        not_receive_confir: "Didn't receive confirmation instructions?"
+        not_receive_unlock: "Didn't receive unlock instructions?"
+        sign_in_with: "Sign in with"
 
   activerecord:
     models:
@@ -293,6 +308,7 @@ en:
         name: "Name"
         email: "Email"
         password: "Password"
+        remember_me: "Remember me?"
         confirmation: "Password Confirmation"
         submit: "Submit"
       currency:
