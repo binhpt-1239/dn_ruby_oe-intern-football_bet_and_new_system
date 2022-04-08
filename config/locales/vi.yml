@@ -282,6 +282,21 @@ vi:
         from: "Từ"
         to: "đến"
         btn_search: "Tìm kiếm"
+  devise:
+    sessions:
+      new:
+        remember_me: "Hãy nhớ tôi trên máy tính này!"
+        log_in: "Đăng nhập"
+        new_user: "Người dùng mới?"
+        intr_signup: "Đăng ký ngay!"
+    shared:
+      links:
+        log_in: "Đăng nhập"
+        sign_up: "Đăng ký"
+        forgot_your_password: "Quên mật khẩu?"
+        not_receive_confir: "Không nhận được hướng dẫn xác nhận?"
+        not_receive_unlock: "Không nhận được hướng dẫn mở khóa?"
+        sign_in_with: "Đăng nhập bằng"
 
   activerecord:
     models:
@@ -293,6 +308,7 @@ vi:
         name: "Tên"
         email: "E-mail"
         password: "Mật khẩu"
+        remember_me: "Hãy nhớ tôi trên máy tính này?"
         confirmation: "Xác nhận Mật khẩu"
         submit: "Thực hiện"
       currency:
