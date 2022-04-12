@@ -114,6 +114,7 @@ vi:
     asider_admin:
       create_soccer_match: "Tạo trận đấu"
       income_statistics: "Thống kê thu nhập"
+      setting: "  Cài đặt"
   static_pages:
     home:
       football_bet: "Cá cược bóng đá"
@@ -297,6 +298,27 @@ vi:
         not_receive_confir: "Không nhận được hướng dẫn xác nhận?"
         not_receive_unlock: "Không nhận được hướng dẫn mở khóa?"
         sign_in_with: "Đăng nhập bằng"
+    registrations:
+      new:
+        sign_up: "Đăng ký"
+        minimum_characters: " ký tự tối thiểu"
+      edit:
+        cancer_acount: "Hủy tài khoản của tôi "
+        unhappy: "Không hài lòng?"
+        edit: "Cập nhật"
+        back: "Quay lại"
+        minimum_characters: " ký tự tối thiểu"
+        intro1: "Hiện đang chờ xác nhận cho:"
+        intro2: "(để trống nếu bạn không muốn thay đổi nó)"
+        intro3: "(chúng tôi cần mật khẩu hiện tại của bạn để xác nhận các thay đổi của bạn)"
+    passwords:
+      new:
+        forgot_password: "Quên mật khẩu? "
+        send_reset_password: "Gửi cho tôi hướng dẫn đặt lại mật khẩu"
+      edit:
+        change_password: "Thay đổi mật khẩu của bạn "
+        change_my_password: "Thay đổi mật khẩu của tôi"
+        minimum_characters: " ký tự tối thiểu"
 
   activerecord:
     models:
@@ -309,7 +331,8 @@ vi:
         email: "E-mail"
         password: "Mật khẩu"
         remember_me: "Hãy nhớ tôi trên máy tính này?"
-        confirmation: "Xác nhận Mật khẩu"
+        password_confirmation: "Xác nhận Mật khẩu"
+        current_password: "Mật khẩu hiện tại"
         submit: "Thực hiện"
       currency:
         amount: "Số tiền"

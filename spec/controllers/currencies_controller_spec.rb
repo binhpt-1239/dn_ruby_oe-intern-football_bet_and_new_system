@@ -11,7 +11,7 @@ RSpec.describe CurrenciesController, type: :controller do
       end
 
       it "set currencies" do
-        currencies = current_user.currencies.search_by_type(nil)
+        currencies = user.currencies.search_by_type(nil)
         expect(assigns(:currencies)).to eq currencies
       end
       it_behaves_like "render action template", "index"

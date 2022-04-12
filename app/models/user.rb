@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :currencies, dependent: :nullify
   has_many :user_bets, dependent: :destroy
   has_many :bets, through: :user_bets, dependent: :destroy
-  has_many :newses, dependent: :nullify
+  has_many :news, dependent: :nullify
   has_many :comments, dependent: :destroy
 
   attr_accessor :remember_me
@@ -17,8 +17,6 @@ class User < ApplicationRecord
   validates :password,
             length: {in: Settings.digits.digit_6..Settings.digits.digit_21},
             allow_nil: true
-
-  has_secure_password
 
   class << self
     def digest string

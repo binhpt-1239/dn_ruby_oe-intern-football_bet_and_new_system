@@ -20,7 +20,7 @@
   <%= link_to t(".profile"), current_user, class: "nav-link py-3 px-2 bi-people fs-6" %>
 </li>
 <li>
-  <%= link_to t(".setting"), "#", class: "nav-link py-3 px-2 bi-wrench fs-6" %>
+  <%= link_to t(".setting"), edit_user_registration_path, class: "nav-link py-3 px-2 bi-wrench fs-6" %>
 </li>
 <li>
   <%= link_to t(".log_out"), destroy_user_session_path, method: "delete", class: "nav-link py-3 px-2 bi-stop-circle-fill fs-6" %>
