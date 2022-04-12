@@ -7,6 +7,7 @@ class Admin::PaymentsController < Admin::BaseController
     payment_user_bet @user_bet
     flag_user_bet @name_success, @name_fails
     redirect_back(fallback_location: admin_root_path)
+    authorize! :update, UserBet
   end
 
   def create_all
@@ -18,6 +19,7 @@ class Admin::PaymentsController < Admin::BaseController
     end
     flag_user_bet @name_success, @name_fails
     redirect_back(fallback_location: admin_root_path)
+    authorize! :update, UserBet
   end
 
   private

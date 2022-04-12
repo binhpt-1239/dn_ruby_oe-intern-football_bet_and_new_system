@@ -1,5 +1,6 @@
 class Admin::BetsController < Admin::BaseController
   include EventsHelper
+  authorize_resource
 
   before_action :load_match, only: %i(create update_bets)
   before_action :check_status_match, only: :update_bets

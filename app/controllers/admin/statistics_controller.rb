@@ -1,5 +1,6 @@
 class Admin::StatisticsController < Admin::BaseController
   include EventsHelper
+  skip_authorization_check
 
   before_action :check_year, only: :index
 

@@ -1,5 +1,6 @@
 class UserBetsController < ApplicationController
   include UserBetsHelper
+  authorize_resource
   before_action :logged_in_user, only: %i(new create index)
   before_action :load_bet, only: %i(new create)
   before_action :check_amount_bet, only: :create
