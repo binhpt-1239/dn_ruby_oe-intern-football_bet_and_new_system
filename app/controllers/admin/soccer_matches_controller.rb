@@ -1,5 +1,6 @@
 class Admin::SoccerMatchesController < Admin::BaseController
   include EventsHelper
+  authorize_resource
 
   before_action :load_soccer_match, only: %i(edit update show)
   before_action :load_teams_and_tournaments, only: %i(new edit)
@@ -12,7 +13,7 @@ class Admin::SoccerMatchesController < Admin::BaseController
   end
 
   def create
-    @soccer_match = SoccerMatch.new match_params
+    @soccer_match = SoccerMatch.new soccer_match_params
     if @soccer_match.save
       flash[:success] = t ".successful_create"
       redirect_to new_admin_soccer_match_path
@@ -29,7 +30,7 @@ class Admin::SoccerMatchesController < Admin::BaseController
   def edit; end
 
   def update
-    if @soccer_match.update match_params
+    if @soccer_match.update soccer_match_params
       flash[:success] = t ".successful_update"
       redirect_to admin_root_path
     else
@@ -59,7 +60,7 @@ class Admin::SoccerMatchesController < Admin::BaseController
     redirect_to admin_root_path
   end
 
-  def match_params
+  def soccer_match_params
     params.require(:soccer_match).permit(:home_id, :guest_id,
                                          :time, :tournament_id)
   end

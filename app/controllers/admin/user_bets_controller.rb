@@ -1,5 +1,6 @@
 class Admin::UserBetsController < Admin::BaseController
   include SoccerMatchHelper
+  authorize_resource
 
   before_action :load_match, :load_bet, :check_status_match, only: :index
 

@@ -1,4 +1,5 @@
 class Admin::GoalResultsController < Admin::BaseController
+  authorize_resource
   skip_before_action :verify_authenticity_token
   before_action :load_match, only: %i(create new)
   before_action :check_team, only: :new

@@ -1,4 +1,5 @@
 class BetsController < ApplicationController
+  authorize_resource
   before_action :logged_in_user, :load_match, only: :index
 
   def index

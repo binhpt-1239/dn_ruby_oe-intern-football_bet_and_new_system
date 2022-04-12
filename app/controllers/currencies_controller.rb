@@ -1,5 +1,6 @@
 class CurrenciesController < ApplicationController
   include EventsHelper
+  authorize_resource
 
   before_action :logged_in_user, only: %i(index new create)
   before_action :check_type, :check_amount_bet, only: :create
