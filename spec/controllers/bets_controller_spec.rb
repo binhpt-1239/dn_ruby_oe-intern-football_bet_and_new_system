@@ -40,9 +40,7 @@ RSpec.describe BetsController, type: :controller do
         get :index, params: {match_id: match.id}
       end
 
-      it "render index" do
-        expect(response).to redirect_to login_path
-      end
+      it_behaves_like "redirect to path", "root_path"
     end
   end
 end

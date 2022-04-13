@@ -17,7 +17,7 @@ RSpec.describe CurrenciesController, type: :controller do
       it_behaves_like "render action template", "index"
     end
 
-    it_behaves_like "when not logged in", "index"
+    it_behaves_like "when do not have access", "index"
   end
 
   describe "GET new" do
@@ -33,7 +33,7 @@ RSpec.describe CurrenciesController, type: :controller do
       it_behaves_like "render action template", "new"
     end
 
-    it_behaves_like "when not logged in", "new"
+    it_behaves_like "when do not have access", "new"
   end
 
   describe "POST create" do
@@ -54,7 +54,7 @@ RSpec.describe CurrenciesController, type: :controller do
       it_behaves_like "redirect to path", "currencies_path"
     end
 
-    it_behaves_like "when not logged in", "create"
+    it_behaves_like "when do not have access", "create"
 
     context "fails when save fails " do
       before do

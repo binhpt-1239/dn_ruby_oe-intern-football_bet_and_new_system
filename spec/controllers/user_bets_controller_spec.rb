@@ -31,8 +31,7 @@ RSpec.describe UserBetsController, type: :controller do
       before :each do
         get :new, params: { id: bet.id }
       end
-      it_behaves_like "flash danger message", "notification.log_in.request"
-      it_behaves_like "redirect to path", "login_path"
+      it_behaves_like "redirect to path", "root_path"
     end
   end
 
@@ -98,8 +97,7 @@ RSpec.describe UserBetsController, type: :controller do
         post :create, params: {id: bet.id, user_bet: {amount: 100}}
       end
 
-      it_behaves_like "flash danger message", "notification.log_in.request"
-      it_behaves_like "redirect to path", "login_path"
+      it_behaves_like "redirect to path", "root_path"
     end
   end
 
@@ -118,13 +116,6 @@ RSpec.describe UserBetsController, type: :controller do
       end
     end
 
-    context "when user not logged in" do
-      before :each do
-        get :index
-      end
-
-      it_behaves_like "flash danger message", "notification.log_in.request"
-      it_behaves_like "redirect to path", "login_path"
-    end
+    it_behaves_like "when do not have access", "index"
   end
 end

@@ -12,6 +12,11 @@ RSpec.shared_examples "when not logged in admin" do
   it_behaves_like "redirect to path", "root_path"
 end
 
+RSpec.shared_examples "when do not have access" do |action|
+  before {get action}
+
+  it_behaves_like "redirect to path", "root_path"
+end
 
 RSpec.shared_examples "when admin not logged in" do |action|
   before {get action}
