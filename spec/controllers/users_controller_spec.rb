@@ -16,10 +16,11 @@ RSpec.describe UsersController, type: :controller do
     end
 
     context "when user not logged in" do
-      it "redirect to login template" do
-        get :show, params: { id: user.id }
-        expect(response).to redirect_to login_path
+      before do
+        get :show, params: {id: user.id}
       end
+
+      it_behaves_like "redirect to path", "root_path"
     end
   end
 end
