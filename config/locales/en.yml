@@ -15,6 +15,17 @@ en:
       default: "%H:%M - %m/%d/%Y"
       long: "%B %d, %Y"
       short: "%b %d"
+  ransack:
+    asc: ascending
+    desc: descending
+    predicates:
+      cont: contains
+      not_cont: not contains
+      start: starts with
+      end: ends with
+      gt: greater than
+      lt: less than
+      gteq: greater than and equal
   notification:
     log_in:
       err: "Sign In fails"
@@ -334,10 +345,15 @@ en:
         current_password: "Current password"
         password_confirmation: "Password Confirmation"
         submit: "Submit"
+      bet:
+        content: "Content"
       currency:
         amount: "Amount"
+        created_at: "Time created"
       user_bet:
         amount: "Amount:"
+      team:
+        name: "Name"
     errors:
       models:
         user:

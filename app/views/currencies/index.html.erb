@@ -10,6 +10,13 @@
         <%= t ".history_currencies" %>
         (<%= current_user.currencies.search_by_type(params[:type]).count %>)
       </h3>
+      <%= search_form_for @q, url: currencies_path,
+                        html: { method: :get } do |f| %>
+        <%= f.label :created_at_gteq %>
+        <%= f.search_field :created_at_gteq %>
+
+        <%= f.submit %>
+      <% end %>
       <ol class="currencies">
         <%= render @currencies %>
       </ol>

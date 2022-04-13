@@ -5,14 +5,16 @@ class Admin::UserBetsController < Admin::BaseController
   before_action :load_match, :load_bet, :check_status_match, only: :index
 
   def index
-    user_bets = @bet.user_bets.newest
+    @q = UserBet.ransack amount_gteq: params.dig(:q, :amount_gteq)
+    user_bets = @q.result.accessible_by(current_ability)
     @pagy, @user_bets = pagy user_bets, items: Settings.digits.digit_6
   end
 
   private
 
   def load_match
-    @match = SoccerMatch.find_by id: params[:match_id]
+    param = params[:match_id] || params.dig(:q, :match_id)
+    @match = SoccerMatch.find_by id: param
     return if @match
 
     flash[:warning] = t ".not_found_match"

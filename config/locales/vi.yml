@@ -15,6 +15,17 @@ vi:
       default: "%H:%M - %m/%d/%Y"
       long: "%B %d, %Y"
       short: "%b %d"
+  ransack:
+    asc: tăng dần
+    desc: giảm dần
+    predicates:
+      cont: chứa
+      not_cont: không chứa
+      start: bắt đầu với
+      end: kết thúc bằng
+      gt: lớn hơn
+      lt: ít hơn
+      gteq: lớn hơn và bằng
   notification:
     log_in:
       err: "Đăng nhập thất bại"
@@ -334,10 +345,15 @@ vi:
         password_confirmation: "Xác nhận Mật khẩu"
         current_password: "Mật khẩu hiện tại"
         submit: "Thực hiện"
+      bet:
+        content: "Nội dung"
       currency:
+        created_at: "Thời gian tạo"
         amount: "Số tiền"
       user_bet:
         amount: "Số tiền"
+      team:
+        name: "Tên"
     errors:
       models:
         user:

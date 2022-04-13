@@ -11,6 +11,15 @@
 <div class="text-center mt-5">
   <span class="text-center"> <%= t ".soccer_matches" %> </span>
 </div>
+<div class="text-center mt-5">
+  <%= search_form_for @q, url: root_path,
+                          html: { method: :get } do |f| %>
+    <%= f.label :home_team_name_or_guest_team_name_cont %>
+    <%= f.search_field :home_team_name_or_guest_team_name_cont %>
+
+    <%= f.submit %>
+  <% end %>
+</div>
 <ol class="center"><%= render @soccer_matches %></ol>
 
 <%== pagy_nav(@pagy) %>

@@ -27,7 +27,8 @@ class UserBetsController < ApplicationController
   end
 
   def index
-    bets = current_user.user_bets
+    @q = UserBet.ransack amount_gteq: params.dig(:q, :amount_gteq)
+    bets = @q.result.accessible_by(current_ability)
     @pagy, @user_bets = pagy bets.newest, items: Settings.digits.digit_6
   end
 
