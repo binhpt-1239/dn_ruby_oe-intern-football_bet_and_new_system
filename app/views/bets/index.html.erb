@@ -23,6 +23,14 @@
       <h3 class="text-danger">
         <%= t ".list_bet" %>
       </h3>
+      <%= search_form_for @q, url: bets_path,
+                        html: { method: :get } do |f| %>
+        <%= f.hidden_field :match_id, value: @match.id %>
+        <%= f.label :content_cont %>
+        <%= f.search_field :content_cont %>
+
+        <%= f.submit %>
+      <% end %>
       <div class="row border-bottom">
         <div class="col-md-1 fs-5 text-primary">
           <%= t ".title_#" %>

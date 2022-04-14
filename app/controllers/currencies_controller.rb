@@ -6,7 +6,9 @@ class CurrenciesController < ApplicationController
   before_action :check_type, :check_amount_bet, only: :create
 
   def index
-    moneys = current_user.currencies.search_by_type(params[:type]).newest
+    @q = Currency.ransack created_at_gteq: params.dig(:q, :created_at_gteq)
+    moneys = @q.result.accessible_by(current_ability)
+               .search_by_type(params[:type]).newest
     @pagy, @currencies = pagy moneys, items: Settings.digits.digit_6
   end
 

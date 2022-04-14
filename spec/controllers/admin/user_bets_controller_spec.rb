@@ -60,5 +60,17 @@ RSpec.describe Admin::UserBetsController, type: :controller do
       it_behaves_like "flash warning message", "admin.user_bets.match_not_begin"
       it_behaves_like "redirect to path", "admin_root_path"
     end
+
+    context "when search ransack" do
+      let!(:user_bet){user.user_bets.create(amount: 100000, bet_id: bet.id)}
+      before do
+        log_in user
+        get :index, params: {q: {match_id: soccer_match.id, amount_gteq: 100000}}
+      end
+
+      it "assigns user_bets constant user_bet" do
+        expect(assigns(:user_bets)).to eq([user_bet])
+      end
+    end
   end
 end

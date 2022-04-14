@@ -4,6 +4,14 @@
     <h3 class="text-danger text-primary">
       <%= t ".title" %>
     </h3>
+    <%= search_form_for @q, url: admin_user_bets_path,
+                        html: { method: :get } do |f| %>
+        <%= f.hidden_field :match_id, value: @match.id %>
+        <%= f.label :amount_gteq %>
+        <%= f.search_field :amount_gteq %>
+
+        <%= f.submit %>
+    <% end %>
     <div class="row mt-3">
       <div class="col-md-1 text-primary">
         <%= t ".title_#" %>

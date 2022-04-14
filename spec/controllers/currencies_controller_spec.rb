@@ -86,5 +86,17 @@ RSpec.describe CurrenciesController, type: :controller do
       it_behaves_like "flash warning message", "currencies.amount_invalid"
       it_behaves_like "redirect to path", "currencies_path"
     end
+
+    context "when search ransack" do
+      let!(:currency){Currency.create!(amount: 100000, user_id: user.id, currency_type_id: 1)}
+      before do
+        log_in user
+        get :index, params: {q: {created_at_gteq: 100000}}
+      end
+
+      it "assigns currencies constant currency" do
+        expect(assigns(:currencies)).to eq([currency])
+      end
+    end
   end
 end

@@ -42,5 +42,17 @@ RSpec.describe BetsController, type: :controller do
 
       it_behaves_like "redirect to path", "root_path"
     end
+
+    context "when search ransack" do
+      let!(:bet){Bet.create!(soccer_match_id: match.id, rate: 4, bet_type: 4, content: "Score: 0-0")}
+      before do
+        log_in user
+        get :index, params: {q: {match_id: match.id, content_cont: "0-0"}}
+      end
+
+      it "assigns bets constant bet" do
+        expect(assigns(:bets)).to eq([bet])
+      end
+    end
   end
 end

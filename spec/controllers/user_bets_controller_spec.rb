@@ -117,5 +117,22 @@ RSpec.describe UserBetsController, type: :controller do
     end
 
     it_behaves_like "when do not have access", "index"
+
+    context "when search ransack" do
+      let!(:home_team){FactoryBot.create :home_team}
+      let!(:guest_team){FactoryBot.create :guest_team}
+      let!(:soccer_match){SoccerMatch.create(tournament_id: 1, time: Time.now + 1.day,
+                                            home_id: home_team.id, guest_id: guest_team.id, status: 1)}
+      let!(:bet){soccer_match.bets.create(rate: 0.9, bet_type: 2, content: "Two Team draw")}
+      let!(:user_bet){user.user_bets.create(amount: 100000, bet_id: bet.id)}
+      before do
+        log_in user
+        get :index, params: {q: {match_id: soccer_match.id, amount_gteq: 100000}}
+      end
+
+      it "assigns user_bets constant user_bet" do
+        expect(assigns(:user_bets)).to eq([user_bet])
+      end
+    end
   end
 end
