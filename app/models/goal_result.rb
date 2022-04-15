@@ -3,6 +3,8 @@ class GoalResult < ApplicationRecord
   belongs_to :soccer_match
   belongs_to :team
 
+  scope :newest, ->{order created_at: :desc}
+
   scope :score, (lambda do |team_id, soccer_match_id|
     where(soccer_match_id: soccer_match_id, team_id: team_id)
   end)

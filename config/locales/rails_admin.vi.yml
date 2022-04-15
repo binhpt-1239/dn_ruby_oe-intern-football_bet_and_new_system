@@ -1,0 +1,157 @@
+vi:
+  admin:
+    js:
+      true: True
+      false: False
+      is_present: tồn tại
+      is_blank: trống?
+      date: Ngày ...
+      between_and_: Giữa ... và ...
+      today: hôm nay
+      yesterday: Hôm qua
+      this_week: Tuần này
+      last_week: Tuần trước
+      time: Thời gian ...
+      number: Số ...
+      contains: Chứa
+      does_not_contain: Không chứa
+      is_exactly: là Chính xác
+      starts_with: Bắt đầu với
+      ends_with: Kết thúc bằng
+      too_many_objects: "Quá nhiều đối tượng, hãy sử dụng hộp tìm kiếm ở trên"
+      no_objects: "Không tìm thấy đối tượng nào"
+      clear: trống
+    toggle_navigation: Chuyển đổi điều hướng
+    home:
+      name: "Trang chủ"
+    pagination:
+      previous: "&laquo; Trước đó"
+      next: "Tiếp theo  &raquo;"
+      truncate: "…"
+    misc:
+      search: "tìm kiếm"
+      filter: "Bộ lọc"
+      reset_filters: "Đặt lại bộ lọc"
+      refresh: "Làm mới"
+      show_all: "Hiển thị tất cả"
+      add_filter: "Thêm bộ lọc"
+      bulk_menu_title: "Các mặt hàng đã chọn"
+      remove: "Loại bỏ"
+      add_new: "Thêm mới"
+      chose_all: "Chọn tất cả"
+      clear_all: "Xóa tất cả"
+      up: "Lên"
+      down: "Lên"
+      navigation: "Điều hướng"
+      root_navigation: "Hành động"
+      navigation_static_label: "Liên kết"
+      log_out: "Đăng xuất"
+      time_ago: "%{time} trước"
+      ago: "trước đây"
+      more: "Thêm %{count} nữa %{models_name}"
+    flash:
+      successful: "%{name} thành công %{action}"
+      error: "%{name} không thành công %{action}"
+      noaction: "No actions were taken"
+      model_not_found: "Model '%{model}' could not be found"
+      object_not_found: "%{model} với id '%{id}' Không thể tìm thấy"
+    table_headers:
+      model_name: "Tên Model "
+      last_created: "Tạo lần cuối"
+      records: "Hồ sơ"
+      username: "Người dùng"
+      changes: "Thay đổi"
+      created_at: "Ngày / Giờ"
+      item: "Item"
+      message: "Tin nhắn"
+    actions:
+      dashboard:
+        title: "Quản trị trang web"
+        menu: "Trang tổng quan"
+        breadcrumb: "Trang tổng quan"
+      index:
+        title: "Danh sách %{model_label_plural}"
+        menu: "Danh sách"
+        breadcrumb: "%{model_label_plural}"
+        no_records: "Không tìm thấy bản ghi"
+      show:
+        title: "Chi tiết cho %{model_label} '%{object_label}'"
+        menu: "Hiển thị"
+        breadcrumb: "%{object_label}"
+      show_in_app:
+        menu: "Hiển thị trong ứng dụng"
+      new:
+        title: "Mới %{model_label}"
+        menu: " Thêm Mới"
+        breadcrumb: "Mới"
+        link: "Thêm Mới %{model_label}"
+        done: "đã tạo"
+      edit:
+        title: "Chỉnh sửa %{model_label} '%{object_label}'"
+        menu: "Chỉnh sửa"
+        breadcrumb: "Chỉnh sửa"
+        link: "Chỉnh sửa %{model_label}"
+        done: "cập nhật"
+      delete:
+        title: "Xóa %{model_label} '%{object_label}'"
+        menu: "Xóa"
+        breadcrumb: "Xóa"
+        link: "Xóa '%{object_label}'"
+        done: "đã Xóa"
+      bulk_delete:
+        title: "Xóa %{model_label_plural}"
+        menu: "Xóa hàng loạt:"
+        breadcrumb: "Xóa hàng loạt"
+        bulk_link: "Xóa nhiều lần %{model_label_plural}"
+      export:
+        title: "Xuất %{model_label_plural}"
+        menu: "Xuất"
+        breadcrumb: "Xuất"
+        link: "Xuất %{model_label_plural}"
+        bulk_link: "Xuất đã chọn %{model_label_plural}"
+        done: "đã xuất"
+      history_index:
+        title: "Lịch sử cho %{model_label_plural}"
+        menu: "Lịch sử "
+        breadcrumb: "Lịch sử "
+      history_show:
+        title: "Lịch sử cho %{model_label} '%{object_label}'"
+        menu: "Lịch sử "
+        breadcrumb: "Lịch sử "
+    form:
+      cancel: "Hủy bỏ"
+      basic_info: "Thông tin cơ bản"
+      required: "Bắt buộc"
+      optional: "Tùy chọn"
+      one_char: "ký tự"
+      char_length_up_to: "độ dài tối đa"
+      char_length_of: "chiều dài của"
+      save: "Lưu"
+      save_and_add_another: "Lưu và thêm một cái khác"
+      save_and_edit: "Lưu và chỉnh sửa"
+      delete_file: "Xóa '%{field_label}' #%{number}"
+      all_of_the_following_related_items_will_be_deleted: "? Các mục liên quan sau đây có thể bị xóa hoặc bị bỏ sót:"
+      are_you_sure_you_want_to_delete_the_object: "Bạn có chắc chắn muốn xóa %{model_name}"
+      confirmation: "Vâng, tôi chắc chắn"
+      bulk_delete: "Các đối tượng sau sẽ bị xóa, có thể xóa hoặc tách một số phụ thuộc có liên quan của chúng:"
+      new_model: "%{name} (mới)"
+    export:
+      confirmation: "Xuất sang %{name}"
+      select: "Chọn trường để xuất"
+      select_all_fields: "Xuất sang"
+      fields_from: "Các trường từ %{name}"
+      fields_from_associated: "Các trường từ %{name}"
+      display: "Hiển thị %{name}: %{type}"
+      options_for: "Tùy chọn cho %{name}"
+      empty_value_for_associated_objects: "<empty>"
+      click_to_reverse_selection: "Nhấp để đảo ngược lựa chọn"
+      csv:
+        header_for_root_methods: "%{name}" # 'model' is available
+        header_for_association_methods: "%{name} [%{association}]"
+        encoding_to: "Mã hóa thành"
+        encoding_to_help: "Chọn mã hóa đầu ra. Để trống để không tác động đến mã hóa đầu vào hiện tại:"
+        skip_header: "Không có tiêu đề"
+        skip_header_help: "Không xuất tiêu đề (không có mô tả trường)"
+        default_col_sep: ","
+        col_sep: "Dấu phân tách cột"
+        col_sep_help: "Để trống cho mặc định ('%{value}')" # giá trị là default_col_sep

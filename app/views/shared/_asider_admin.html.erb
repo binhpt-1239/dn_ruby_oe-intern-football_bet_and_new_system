@@ -5,6 +5,9 @@
   <%= link_to t("shared.asider_user.home"), admin_root_path, class: "nav-link py-3 px-2 bi-house fs-6" %>
 </li>
 <li class="nav-item">
+  <%= link_to t("actions.Dashboard.menu"), Settings.dashboard_path, class: "nav-link py-3 px-2 bi-house fs-6" %>
+</li>
+<li class="nav-item">
   <%= link_to t(".create_soccer_match"), new_admin_soccer_match_path, class: "nav-link py-3 px-2 bi bi-chevron-double-right fs-6" %>
 </li>
 <li class="nav-item">
