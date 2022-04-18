@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  require "sidekiq/web"
+
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#home"
     devise_for :users
@@ -13,6 +15,7 @@ Rails.application.routes.draw do
     resources :currencies, only: %i(new create index)
 
     namespace :admin do
+      mount Sidekiq::Web => "/sidekiq"
       post "/payment", to: "payments#create"
       post "/payment_all", to: "payments#create_all"
       resources :goal_results, only: %i(create new)

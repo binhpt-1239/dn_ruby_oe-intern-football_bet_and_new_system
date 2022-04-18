@@ -126,6 +126,7 @@ en:
       create_soccer_match: "Create soccer match"
       income_statistics: "Income statistics"
       setting: "  Settings"
+      menu_sidekig: "Manager SideKig"
   static_pages:
     home:
       football_bet: "Football Bet"

@@ -126,6 +126,7 @@ vi:
       create_soccer_match: "Tạo trận đấu"
       income_statistics: "Thống kê thu nhập"
       setting: "  Cài đặt"
+      menu_sidekig: "Quản lý SideKig"
   static_pages:
     home:
       football_bet: "Cá cược bóng đá"

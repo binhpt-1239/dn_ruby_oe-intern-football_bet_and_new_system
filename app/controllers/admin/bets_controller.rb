@@ -8,13 +8,8 @@ class Admin::BetsController < Admin::BaseController
   def create
     return unless check_bet_empty? @soccer_match
 
-    arr = Settings.arr_content_bets
     begin
-      SoccerMatch.transaction do
-        arr.each_with_index do |content, i|
-          @soccer_match.bets.create!(rate: 1, bet_type: i + 1, content: content)
-        end
-      end
+      CreateBetsJob.perform_in(1.second, @soccer_match.id)
       flash[:success] = t ".bets_default"
     rescue StandardError
       action_if_create_false
