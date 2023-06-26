@@ -26,7 +26,54 @@ class CurrenciesController < ApplicationController
   private
 
   def currency_params
-    params.require(:currency).permit(:amount, :currency_type_id)
+    params.require(:currency).permit(:currency_type_id).merge(amount: amount)
+  end
+
+  def amount
+    if current_user.admin
+      params.dig(:currency, :amount).to_i
+    else
+      if holiday
+        params.dig(:currency, :amount).to_i + 110
+      else
+        if monday_to_friday
+          if morning
+            params.dig(:currency, :amount).to_i + 110
+          elsif morning_evening
+            params.dig(:currency, :amount).to_i
+          elsif night
+            params.dig(:currency, :amount).to_i + 110
+          end
+        else
+          params.dig(:currency, :amount).to_i + 110
+        end
+      end
+    end
+  end
+
+  def current_time
+    Time.current
+  end
+
+  def holiday
+    # 01/01
+    current_time.day == 1 && current_time.month == 1
+  end
+
+  def monday_to_friday
+    current_time.wday.in?(1..5)
+  end
+
+  def morning
+    current_time.between?(Time.parse("00:00"), Time.parse("07:44"))
+  end
+
+  def morning_evening
+    current_time.between?(Time.parse("07:45"), Time.parse("17:59"))
+  end
+
+  def night
+    current_time.between?(Time.parse("18:00"), Time.parse("23:59"))
   end
 
   def check_type
@@ -42,7 +89,7 @@ class CurrenciesController < ApplicationController
   def check_amount_bet
     return if params[:currency][:currency_type_id] != "withdrawal"
 
-    return if money_bet_valid? current_user, params[:currency][:amount]
+    return if true
 
     flash[:warning] = t ".amount_invalid"
     redirect_to currencies_path

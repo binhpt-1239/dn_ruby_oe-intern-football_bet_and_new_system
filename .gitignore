@@ -61,8 +61,7 @@ config/environments/*.local.yml
 /config/application.yml
 
 #spec
-/spec/helpers/*.rb
-/spec/requests/*.rb
+/spec/helpers/*.
 /spec/views/*
 
 /.vscode
