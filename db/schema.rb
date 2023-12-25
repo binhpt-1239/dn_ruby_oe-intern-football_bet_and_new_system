@@ -10,9 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_27_180258) do
+ActiveRecord::Schema.define(version: 2023_12_18_124139) do
 
-  create_table "bets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "bets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "soccer_match_id", null: false
     t.float "rate"
     t.integer "bet_type"
@@ -22,7 +43,7 @@ ActiveRecord::Schema.define(version: 2022_03_27_180258) do
     t.index ["soccer_match_id"], name: "index_bets_on_soccer_match_id"
   end
 
-  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "news_id"
     t.string "content"
@@ -32,7 +53,7 @@ ActiveRecord::Schema.define(version: 2022_03_27_180258) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "currencies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "currencies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.float "amount"
     t.bigint "user_id", null: false
     t.bigint "currency_type_id", null: false
@@ -42,11 +63,11 @@ ActiveRecord::Schema.define(version: 2022_03_27_180258) do
     t.index ["user_id"], name: "index_currencies_on_user_id"
   end
 
-  create_table "currency_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "currency_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
   end
 
-  create_table "goal_results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "goal_results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "player_id"
     t.integer "time_goal"
     t.bigint "soccer_match_id"
@@ -58,7 +79,7 @@ ActiveRecord::Schema.define(version: 2022_03_27_180258) do
     t.index ["team_id"], name: "index_goal_results_on_team_id"
   end
 
-  create_table "news", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "news", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "title"
     t.string "content"
     t.bigint "user_id"
@@ -67,7 +88,7 @@ ActiveRecord::Schema.define(version: 2022_03_27_180258) do
     t.index ["user_id"], name: "index_news_on_user_id"
   end
 
-  create_table "player_infos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "player_infos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "player_id"
     t.bigint "team_tournament_id"
     t.datetime "created_at", precision: 6, null: false
@@ -76,13 +97,13 @@ ActiveRecord::Schema.define(version: 2022_03_27_180258) do
     t.index ["team_tournament_id"], name: "index_player_infos_on_team_tournament_id"
   end
 
-  create_table "players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "position"
     t.integer "number"
   end
 
-  create_table "soccer_matches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "soccer_matches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "home_id"
     t.integer "guest_id"
     t.bigint "tournament_id"
@@ -91,7 +112,7 @@ ActiveRecord::Schema.define(version: 2022_03_27_180258) do
     t.index ["tournament_id"], name: "index_soccer_matches_on_tournament_id"
   end
 
-  create_table "team_tournaments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "team_tournaments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "team_id"
     t.bigint "tournament_id"
     t.datetime "created_at", precision: 6, null: false
@@ -100,13 +121,13 @@ ActiveRecord::Schema.define(version: 2022_03_27_180258) do
     t.index ["tournament_id"], name: "index_team_tournaments_on_tournament_id"
   end
 
-  create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "tournaments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "tournaments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.date "begin_time"
     t.date "end_time"
@@ -114,7 +135,7 @@ ActiveRecord::Schema.define(version: 2022_03_27_180258) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "user_bets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "user_bets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id"
     t.float "amount"
     t.boolean "result_bet"
@@ -125,7 +146,7 @@ ActiveRecord::Schema.define(version: 2022_03_27_180258) do
     t.index ["user_id"], name: "index_user_bets_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
@@ -133,8 +154,10 @@ ActiveRecord::Schema.define(version: 2022_03_27_180258) do
     t.string "password_digest"
     t.boolean "admin", default: false
     t.string "remember_digest"
+    t.string "image"
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bets", "soccer_matches"
   add_foreign_key "comments", "news"
   add_foreign_key "comments", "users"

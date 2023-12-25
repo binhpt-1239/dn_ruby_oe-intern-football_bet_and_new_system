@@ -6,5 +6,11 @@
       <%= link_to t(".account_balance"), currencies_path %>
       <%= number_to_currency(sum_amount current_user) %>
     </h5>
+    <h5>
+      <%= form_for @current_user,  html: { multipart: true }  do |f| %>
+        <%= f.file_field :thumbnail %>
+        <%= f.submit "update" %>
+      <% end %>
+    </h5>
   </aside>
 </div>

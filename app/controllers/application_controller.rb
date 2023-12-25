@@ -26,4 +26,11 @@ class ApplicationController < ActionController::Base
   def default_url_options
     {locale: I18n.locale}
   end
+
+  def upload_image image
+    return unless image
+
+    obj = S3_BUCKET.object("uploads_s3/#{image.original_filename}")
+    obj.put(body: image)
+  end
 end

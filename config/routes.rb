@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
 
-    resources :users, only: :show
+    resources :users, only: [:show, :update]
     resources :currencies, only: %i(new create index)
 
     namespace :admin do
